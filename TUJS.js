@@ -82,6 +82,26 @@
 
     };
 
+//will return an array of the window size of the screen you are on
+    TUJS.getWindowSize = function() {
+    var myWidth = 0, myHeight = 0;
+
+    if( typeof( window.innerWidth ) == 'number' ) {
+        //everything outside of IE
+        myWidth = window.innerWidth;
+        myHeight = window.innerHeight;
+    } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+        //IE 6+ in 'standards compliant mode'... whatever that means
+        myWidth = document.documentElement.clientWidth;
+        myHeight = document.documentElement.clientHeight;
+    } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+        //IE 4 compatible... blow it up
+        myWidth = document.body.clientWidth;
+        myHeight = document.body.clientHeight;
+    }
+    return [ myWidth, myHeight ];
+};
+
 
     ///>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>End of library<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
       //call things on load
