@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Page Title</title>
+  <style>
+    .bad {
+      color: green;
+    }
+    .good {
+      color: black;
+    }
+    h1 {
+      text-align: center;
+    }
+  </style>
+  <script type="text/javascript">
+function calculate(){
+  document.getElementById('test2').innerHTML = TUJS.Calc('first','second', '*');
+}
+  </script>
+</head>
+
+<body>
+  <h1 class="bad" id="test1">Header</h1>
+  <h1 class="bad" id="test4" onmouseover="TUJS.AddClock('test4')" onmouseout="innerHTML='second Header'"> second Header</h1>
+  <p>A generic paragraph.</p>
+  <input id="first" />
+  <input id="second" />
+  <button type="Button" id="selector" onclick="TUJS.add('first','second');">add</button>
+
+  <button type="Button" id="selector2" onclick="calculate()">Multiply</button>
+  <h1 class="bad" id="test2">third Header</h1>
+  <h1 class="bad" id="test3">forth Header</h1>
+</body>
+  <script src="TUJS.js"></script>
+</html>
