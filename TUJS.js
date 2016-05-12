@@ -2,22 +2,33 @@
 
   'use strict';
 
+  //add jquery to project
+  var script = document.createElement('script');
+  //script.src = 'http://code.jquery.com/jquery-2.2.0.min.js';
+  script.src = "Jquery-2.2.0.js";
+  script.type = 'text/javascript';
+  document.getElementsByTagName('head')[0].appendChild(script);
+
   function define_TUJS() {
 
     var TUJS = {};
 
-//quick reference for items in library
-    function TU$(elem){
+  ///>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>beginning of library<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+    //quick reference for items in the DOM
+    TUJS.E = function(elem){
       return document.getElementById(elem);
-    }
-    function TU_(elem){
+    };
+    TUJS.C = function(elem){
       return document.getElementsByClassName(elem);
-    }
-    ///>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>beginning of library<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    };
+    TUJS.T = function(elem){
+      return document.getElementsByTagName(elem);
+    };
 
     // About
     TUJS.ver = function() {
-      console.log(" Version: 0.1\n Authors: \n 'Kyler Love'\n Began: '11 March 2016'\n\n'Rob Zahorchak'\n Began: '11 May 2016'");
+      console.log(" Version: 0.1\n Authors: \n 'Kyler Love'\n Began: '11 March 2016' \n\n'Rob Zahorchak'\n Began: '11 May 2016'");
     };
     //greet people cause its nice
     TUJS.greet = function() {
@@ -32,36 +43,37 @@
       bod.innerHTML = NothingMatters;
     };
 
-
-    TUJS.Calc = function(a, b, Operator) {
-      /* jshint ignore:start */
-      let A = TU$(a).value;
-      let B = TU$(b).value;
-      /* jshint ignore:end */
+    TUJS.Calc = function(a, b, Operator, OutputElem) {
+      console.log(typeof(OutputElem));
+      //repurpose OutputElem into the object
+      OutputElem = TUJS.E(OutputElem);
+      var A = TUJS.E(a).value;
+      var B = TUJS.E(b).value;
       var C;
-
-      if(Operator === "+"){
+      switch (Operator){
+        case "+":
         C = A + B;
-      }
-      if(Operator === "-"){
+        break;
+        case "-":
         C = A - B;
-      }
-      if(Operator === "*"){
+        break;
+        case "*":
         C = A * B;
-      }
-      if(Operator === "/"){
+        break;
+        case "/":
         C = A / B;
-      }
-      if(Operator === "%"){
+        break;
+        case "%":
         C = A % B;
+        break;
       }
+      OutputElem.innerHTML = C;
       return C;
     };
 
-
     //turn the innerHTML of any element into a clock
     TUJS.AddClock = function(elem) {
-      var tag = TU$(elem);
+      var tag = TUJS.E(elem);
       var now = new Date();
       tag.innerHTML = now.toLocaleTimeString();
     };
@@ -69,7 +81,7 @@
     //bool if the id is in passed array
     //
     TUJS.Contains = function(elem, obj){
-      var a = TU$(elem).innerHTML;
+      var a = TUJS.E(elem).innerHTML;
       var i = a.length;
       while (i--) {
         console.log(a[i]);
@@ -85,7 +97,7 @@
     //toggles an element as hidden or not based on what it currently is
     //NEEDS JQUERY
     TUJS.HideShow = function (elem){
-      var tag = TU$(elem);
+      var tag = TUJS.E(elem);
       $(tag).toggle();
     };
 
