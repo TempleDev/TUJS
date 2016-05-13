@@ -1,4 +1,6 @@
-# TUJS
+
+#TUJS
+
 Temple University IS&amp;T Capstone JavaScript Library
 
  OVERVIEW:
@@ -14,11 +16,15 @@ To use this Library:
 
 3) To call any of the following funcitons from the library you to call the Library itself followed by the functions with any parameters that this may take.  For example, the following code will display the version function in the console when the button is clicked:
 
-<button onclick"TUJS.ver()">Click for Version</button>
+"<button onclick"TUJS.ver()">Click for Version</button>"
 
-    Features
+## Usable Functions
+### Below is a list of all functions in the Library:
 
-CALCULATIONS:
-    NOTES:
-    INPUT:
-    OUTPUT:
+####CALCULATIONS:
+######Notes:
+######INPUT:
+######OUTPUT:
+
+  <tabTrigger>readme</tabTrigger>
+
