@@ -30,13 +30,13 @@ To use this Library:
 ######OUTPUT:
 **[Back to top](#usable-functions)**
 
- ####Hide and Show Content:
+####Hide and Show Content:
 ######Notes:
 ######INPUT:
 ######OUTPUT:
 **[Back to top](#usable-functions)**
 
- ####Get Size of Page:
+####Get Size of Page:
 ######Notes:
 ######INPUT:
 ######OUTPUT:
