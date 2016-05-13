@@ -21,12 +21,24 @@ To use this Library:
 ## Usable Functions
 ### Below is a list of all functions in the Library:
 [Calculations](#calculations)
+[Hide and Show Content](#Hide-and-Show-Content)
+[Get Size of Page](#get-size-of-page)
 
-####CALCULATIONS:
+####Calculations:
 ######Notes:
 ######INPUT:
 ######OUTPUT:
 **[Back to top](#usable-functions)**
 
-  <tabTrigger>readme</tabTrigger>
+ ####Hide and Show Content:
+######Notes:
+######INPUT:
+######OUTPUT:
+**[Back to top](#usable-functions)**
+
+ ####Get Size of Page:
+######Notes:
+######INPUT:
+######OUTPUT:
+**[Back to top](#usable-functions)**
 
