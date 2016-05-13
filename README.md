@@ -28,17 +28,17 @@ To use this Library:
 ######Notes:
 ######INPUT:
 ######OUTPUT:
-**[Back to top](#usable-functions)**
+[Back to top](#usable-functions)
 
 ####Hide and Show Content:
 ######Notes:
 ######INPUT:
 ######OUTPUT:
-**[Back to top](#usable-functions)**
+[Back to top](#usable-functions)
 
 ####Get Size of Page:
 ######Notes:
 ######INPUT:
 ######OUTPUT:
-**[Back to top](#usable-functions)**
+[Back to top](#usable-functions)
 
