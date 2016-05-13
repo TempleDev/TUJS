@@ -20,11 +20,13 @@ To use this Library:
 
 ## Usable Functions
 ### Below is a list of all functions in the Library:
+[Calculations](####CALCULATIONS)
 
 ####CALCULATIONS:
 ######Notes:
 ######INPUT:
 ######OUTPUT:
+**[Back to top](#table-of-contents)**
 
   <tabTrigger>readme</tabTrigger>
 
