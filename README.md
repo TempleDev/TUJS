@@ -20,7 +20,7 @@ To use this Library:
 
 ## Usable Functions
 ### Below is a list of all functions in the Library:
-[Calculations](#calculations)
+[Calculations](#calculations)<br/>
 [Hide and Show Content](#hide-and-show-content)<br/>
 [Get Size of Page](#get-size-of-page)
 
