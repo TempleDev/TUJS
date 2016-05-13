@@ -1,5 +1,5 @@
 # TUJS
-Temple University IS&amp;T JavaScript Library
+Temple University IS&amp;T Capstone JavaScript Library
 
  OVERVIEW:
  This Library is a compilation of functions and features that are helpful with Temple IS&T Capstone Client side features.  You are free to use it and modify it as needed.  
