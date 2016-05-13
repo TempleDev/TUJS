@@ -26,7 +26,7 @@ To use this Library:
 ######Notes:
 ######INPUT:
 ######OUTPUT:
-**[Back to top](#Usable Functions)**
+**[Back to top](#Usable-Functions)**
 
   <tabTrigger>readme</tabTrigger>
 
