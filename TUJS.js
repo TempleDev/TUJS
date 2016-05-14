@@ -28,8 +28,9 @@
 
     // About
     TUJS.ver = function() {
-      console.log(" Version: 0.1\n Authors: \n 'Kyler Love'\n Began: '11 March 2016' \n\n'Rob Zahorchak'\n Began: '11 May 2016'");
+      console.log(" Version: 0.3.1\n Authors: \n 'Kyler Love'\n Began: '11 March 2016' \n\n'Rob Zahorchak'\n Began: '11 May 2016'");
     };
+    
     //greet people cause its nice
     TUJS.greet = function() {
       console.log("Welcome to Temple University IS&T JavaScript Library");
@@ -47,9 +48,9 @@
       console.log(typeof(OutputElem));
       //repurpose OutputElem into the object
       OutputElem = TUJS.E(OutputElem);
-      var A = TUJS.E(a).value;
-      var B = TUJS.E(b).value;
-      var C;
+      var A = parseFloat(TUJS.E(a).value);
+      var B = parseFloat(TUJS.E(b).value);
+      var C = 0;
       switch (Operator){
         case "+":
         C = A + B;
@@ -79,7 +80,6 @@
     };
 
     //bool if the id is in passed array
-    //
     TUJS.Contains = function(elem, obj){
       var a = TUJS.E(elem).innerHTML;
       var i = a.length;
@@ -96,9 +96,12 @@
 
     //toggles an element as hidden or not based on what it currently is
     //NEEDS JQUERY
-    TUJS.HideShow = function (elem){
+    TUJS.HideShow = function (elem, totTime){
       var tag = TUJS.E(elem);
-      $(tag).toggle();
+      if(totTime === undefined){
+        totTime = 0;
+      }
+      $(tag).toggle(totTime);
     };
 
     //will return an array of the window size of the screen you are on
@@ -121,6 +124,18 @@
       return [ myWidth, myHeight ];
     };
 
+    //returns the difference of two dates (in Days) as inputs
+   TUJS.DateDifference = function(date1, date2, otpt){
+     otpt = TUJS.E(otpt);
+     date1 = TUJS.E(date1).value;
+     date2 = TUJS.E(date2).value;
+
+     date1 = Date.parse(date1);
+     date2 = Date.parse(date2);
+     var timeDiff = Math.abs(date2 - date1);
+     var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+     otpt.innerHTML = diffDays + " Days";
+   };
 
     ///>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>End of library<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     //call things on load

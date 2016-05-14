@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>Page Title</title>
   <style>
@@ -23,21 +22,24 @@
   <p id="genPar">A generic paragraph.</p>
 
   <input id="first" />
-  <input id="second" onkeyup="TUJS.Calc('first', 'second', '/', 'test1')"/>
-  <button type="Button" id="selector" onclick="TUJS.add('first','second');">add</button>
-<button type="Button" id="selector3" onclick="TUJS.HideShow('test4');">toggle</button>
+  <input id="second" onkeyup="TUJS.Calc('first', 'second', '+', 'test1')"/>
+  <button type="Button" id="selector" onclick="addit()">add</button>
+<button type="Button" id="selector3" onclick="TUJS.HideShow('test2', 500);">toggle</button>
   <button type="Button" id="selector2" onclick="calculateMult()">Multiply</button>
     <button type="Button" id="selector4" onclick="TUJS.Contains('genPar', 'p')">Contains</button>
+    <br>
+    <input type="Date" name="name" id="date1">
+    <input type="Date" name="name" id="date2">
+    <button type="button" name="button" id="btnDateDiff"
+    onclick="TUJS.DateDifference('date1', 'date2', 'test3')">Calculate the difference in Dates</button>
   <h1 class="bad" id="test2">third Header</h1>
   <h1 class="bad" id="test3">forth Header</h1>
 </body>
   <script src="TUJS.js"></script>
   <script type="text/javascript">
-function calculate(){
-//  document.getElementById('test2').innerHTML = TUJS.Calc('first','second', '/');
-     TUJS.E('test2').innerHTML = TUJS.Calc('first','second', '/');
-}
-
+ function addit(){
+   TUJS.E('test4').value = TUJS.Calc('first', 'second', '+', 'test2');
+ }
 function calculateMult(){
 //  document.getElementById('test2').innerHTML = TUJS.Calc('first','second', '/');
      TUJS.E('test2').innerHTML = TUJS.Calc('first','second', '*', 'test2');
