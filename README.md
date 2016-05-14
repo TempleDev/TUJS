@@ -14,7 +14,7 @@ To use this Library:
 
 \<script src="TUJS/TUJS.js">\</script>
 
-3) To call any of the following funcitons from the library you to call the Library itself followed by the functions with any parameters that this may take.  For example, the following code will display the version function in the console when the button is clicked:
+3) To call any of the following funcitons from the library you to call the Library itself followed by the functions with any parameters that it may take.  For example, the following code will display the version function in the console when the button is clicked:
 
 \<button onclick"TUJS.ver()">Click for Version\</button>
 
