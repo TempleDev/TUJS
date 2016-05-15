@@ -28,11 +28,14 @@ To use this Library:
 [Contains](#contains)<br/>
 
 ####Calculations:
-######Notes: This function takes in 3 OR 4 arguments.
+######Notes: 
+This function takes in 3 OR 4 arguments.
 4 arguments:( First Textbox ID, Second Textbox ID, Operator as string, ID of Output Element).  Based on the Operator that you input (ie: '+'), the function will get the integer value of the two textbox inputs and perform the calculation returning the caclulated value.
 3 arguments:( First Textbox ID, Second Textbox ID, Operator as string).  Does the same calculation as with 4 arguements, but the function is now assignable. (ie: var ans = TUJS.Calc('txtbx1', 'txtbx2', '*'); )
-######INPUT: 4 Arguments (String, String, String, String) OR 3 Arguments (String, String, String)
-######OUTPUT: can be returned as an float to perform more calculations or returns nothing and can be used to assign the value of the 4th element passed in
+######INPUT: 
+4 Arguments (String, String, String, String) OR 3 Arguments (String, String, String)
+######OUTPUT:
+can be returned as an float to perform more calculations or returns nothing and can be used to assign the value of the 4th element passed in
 
 
 ####Hide and Show Content:
