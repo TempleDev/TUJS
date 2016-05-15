@@ -30,7 +30,7 @@
     TUJS.ver = function() {
       console.log(" Version: 0.3.1\n Authors: \n 'Kyler Love'\n Began: '11 March 2016' \n\n'Rob Zahorchak'\n Began: '11 May 2016'");
     };
-    
+
     //greet people cause its nice
     TUJS.greet = function() {
       console.log("Welcome to Temple University IS&T JavaScript Library");
@@ -45,11 +45,13 @@
     };
 
     TUJS.Calc = function(a, b, Operator, OutputElem) {
-      console.log(typeof(OutputElem));
+
       //repurpose OutputElem into the object
       OutputElem = TUJS.E(OutputElem);
+
       var A = parseFloat(TUJS.E(a).value);
       var B = parseFloat(TUJS.E(b).value);
+
       var C = 0;
       switch (Operator){
         case "+":
@@ -68,8 +70,15 @@
         C = A % B;
         break;
       }
+      if(OutputElem === null){
+          console.log(C);
+        return C;
+
+      }else{
+      OutputElem.value = C;
       OutputElem.innerHTML = C;
-      return C;
+    }
+
     };
 
     //turn the innerHTML of any element into a clock
@@ -79,7 +88,7 @@
       tag.innerHTML = now.toLocaleTimeString();
     };
 
-    //bool if the id is in passed array
+    //bool if the obj is found inside the Element(elem) is in passed array
     TUJS.Contains = function(elem, obj){
       var a = TUJS.E(elem).innerHTML;
       var i = a.length;

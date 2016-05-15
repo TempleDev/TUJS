@@ -17,32 +17,45 @@
 </head>
 
 <body>
-  <h1 class="bad" id="test1">Header</h1>
-  <h1 class="bad" id="test4" onmouseover="TUJS.AddClock('test4')" onmouseout="innerHTML='second Header'"> second Header</h1>
-  <p id="genPar">A generic paragraph.</p>
+  <h1 class="bad" id="test1">TUJS Examples</h1>
 
   <input id="first" />
   <input id="second" onkeyup="TUJS.Calc('first', 'second', '+', 'test1')"/>
-  <button type="Button" id="selector" onclick="addit()">add</button>
-<button type="Button" id="selector3" onclick="TUJS.HideShow('test2', 500);">toggle</button>
-  <button type="Button" id="selector2" onclick="calculateMult()">Multiply</button>
-    <button type="Button" id="selector4" onclick="TUJS.Contains('genPar', 'p')">Contains</button>
-    <br>
+  <select name="" id="selectOperator">
+    <option value="+">+</option>
+      <option value="-">-</option>
+        <option value="*">*</option>
+          <option value="/">/</option>
+          <option value="%">%</option>
+  </select>
+  <button type="Button" id="selector" onclick="addit()">Calculate</button>
+  <label id="lblCalc"></label>
+  <br><br>
+<hr>
+
+<button type="Button" id="selector3" onclick="TUJS.HideShow('lblhide', 200);">toggle</button>
+<label id="lblhide">Hide THIS</label>
+<br><br>
+<hr>
+
+    <button type="Button" id="selector4" onclick="TUJS.E('lblContains').innerHTML = TUJS.Contains('lblContainsEx', 'W')">Contains</button>
+    <label id="lblContainsEx">if there is an W in this sentence it will return true:::>></label>
+    <label id="lblContains"></label>
+    <br><br><hr>
     <input type="Date" name="name" id="date1">
     <input type="Date" name="name" id="date2">
     <button type="button" name="button" id="btnDateDiff"
-    onclick="TUJS.DateDifference('date1', 'date2', 'test3')">Calculate the difference in Dates</button>
-  <h1 class="bad" id="test2">third Header</h1>
-  <h1 class="bad" id="test3">forth Header</h1>
+    onclick="TUJS.DateDifference('date1', 'date2', 'lblDate')">Calculate the difference in Dates</button>
+    <label id="lblDate"></label>
+    <br><br><hr>
 </body>
+
   <script src="TUJS.js"></script>
+
   <script type="text/javascript">
  function addit(){
-   TUJS.E('test4').value = TUJS.Calc('first', 'second', '+', 'test2');
+   var op = TUJS.E('selectOperator').value;
+   TUJS.E('test4').value = TUJS.Calc('first', 'second', op, 'lblCalc');
  }
-function calculateMult(){
-//  document.getElementById('test2').innerHTML = TUJS.Calc('first','second', '/');
-     TUJS.E('test2').innerHTML = TUJS.Calc('first','second', '*', 'test2');
-}
   </script>
 </html>
