@@ -13,7 +13,7 @@
 
     var TUJS = {};
 
-  ///>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>beginning of library<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    ///>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>beginning of library<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
     //quick reference for items in the DOM
     TUJS.E = function(elem){
@@ -44,6 +44,8 @@
       bod.innerHTML = NothingMatters;
     };
 
+    //the calc function takes in 3 or 4 arguments and will perform the
+    //passed in function
     TUJS.Calc = function(a, b, Operator, OutputElem) {
 
       //repurpose OutputElem into the object
@@ -71,13 +73,13 @@
         break;
       }
       if(OutputElem === null){
-          console.log(C);
+        console.log(C);
         return C;
 
       }else{
-      OutputElem.value = C;
-      OutputElem.innerHTML = C;
-    }
+        OutputElem.value = C;
+        OutputElem.innerHTML = C;
+      }
 
     };
 
@@ -134,17 +136,30 @@
     };
 
     //returns the difference of two dates (in Days) as inputs
-   TUJS.DateDifference = function(date1, date2, otpt){
-     otpt = TUJS.E(otpt);
-     date1 = TUJS.E(date1).value;
-     date2 = TUJS.E(date2).value;
+    TUJS.DateDifference = function(date1, date2, otpt){
+      otpt = TUJS.E(otpt);
+      date1 = TUJS.E(date1).value;
+      date2 = TUJS.E(date2).value;
 
-     date1 = Date.parse(date1);
-     date2 = Date.parse(date2);
-     var timeDiff = Math.abs(date2 - date1);
-     var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
-     otpt.innerHTML = diffDays + " Days";
-   };
+      date1 = Date.parse(date1);
+      date2 = Date.parse(date2);
+      var timeDiff = Math.abs(date2 - date1);
+      var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+      otpt.innerHTML = diffDays + " Days";
+    };
+
+    //takes in a id of a table(or gridview) and returns an array
+    //of passed in column
+    TUJS.TableColumnToArray = function(tbl, colNum){
+      tbl = TUJS.E(tbl);
+      var list = [];
+      var tabCount = tbl.rows.length;
+      console.log(tbl);
+      for(var x = 1; x < tabCount; x++){
+        list[x - 1] = tbl.rows[x].cells[colNum].innerHTML;
+      }
+      return list;
+    };
 
     ///>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>End of library<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     //call things on load
