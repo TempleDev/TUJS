@@ -39,79 +39,81 @@
   <hr>
 
   <button type="Button" id="selector4" onclick="TUJS.E('lblContains').innerHTML = TUJS.Contains('lblContainsEx', 'W')">Contains</button>
-  <label id="lblContainsEx">if there is an W in this sentence it will return true:::>></label>
+  <label id="lblContainsEx">if there is an W in this sentence it will return true-----</label>
   <label id="lblContains"></label>
   <br><br><hr>
   <input type="Date" name="name" id="date1">
   <input type="Date" name="name" id="date2">
   <button type="button" name="button" id="btnDateDiff"
-  onclick="TUJS.DateDifference('date1', 'date2', 'lblDate')">Calculate the difference in Dates</button>
-  <label id="lblDate"></label>
-  <br><br><hr>
-  <table style="width:40%" id="tblDemo">
-    <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Age</th>
-      <th>Status</th>
-    </tr>
-    <tr>
-      <td>John</td>
-      <td>Hammond</td>
-      <td>50</td>
-      <td>In Progress</td>
-    </tr>
-    <tr>
-      <td>Mitch</td>
-      <td>Man</td>
-      <td>25</td>
-      <td>Complete</td>
-    </tr>
-    <tr>
-      <td>Kris</td>
-      <td>Kringle</td>
-      <td>232</td>
-      <td>Not Started</td>
-    </tr>
-    <tr>
-      <td>Peter</td>
-      <td>Pan</td>
-      <td>13?</td>
-      <td>Complete</td>
-    </tr>
-    <tr>
-      <td>Albus</td>
-      <td>Dumbledore</td>
-      <td>132</td>
-      <td>Not Started</td>
-    </tr>
-  </table>
-  <button type="button" name="button" onclick="findStatus()">Visualize Status</button>
-  <label id="lblTableDemo"></label>
-  <br><br><hr>
+  onclick="TUJS.DateDifference('date1', 'date2', 'lblDate')">Calculate the difference in Dates
+</button>
+<label id="lblDate"></label>
+<br><br><hr>
+<table style="width:40%" id="tblDemo">
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Age</th>
+    <th>Status</th>
+  </tr>
+  <tr>
+    <td>John</td>
+    <td>Hammond</td>
+    <td>50</td>
+    <td>In Progress</td>
+  </tr>
+  <tr>
+    <td>Mitch</td>
+    <td>Man</td>
+    <td>25</td>
+    <td>Complete</td>
+  </tr>
+  <tr>
+    <td>Kris</td>
+    <td>Kringle</td>
+    <td>232</td>
+    <td>Not Started</td>
+  </tr>
+  <tr>
+    <td>Peter</td>
+    <td>Pan</td>
+    <td>13?</td>
+    <td>Complete</td>
+  </tr>
+  <tr>
+    <td>Albus</td>
+    <td>Dumbledore</td>
+    <td>132</td>
+    <td>Not Started</td>
+  </tr>
+</table>
+<button type="button" name="button" onclick="findStatus()">Visualize Status</button>
+<label id="lblTableDemo"></label>
+<br><br><hr>
 </body>
 
 <script src="TUJS.js"></script>
 
 <script type="text/javascript">
+
 function addit(){
   var op = TUJS.E('selectOperator').value;
   TUJS.E('test4').value = TUJS.Calc('first', 'second', op, 'lblCalc');
 }
 
 function findStatus(){
-  var tbl =  TUJS.TableColumnToArray('tblDemo', 3);
+  var tbl =  TUJS.Table.ColumnToArray('tblDemo', 3);
   var elem =  TUJS.E('tblDemo');
   for(itme in tbl){
     console.log(tbl[itme]);
     if(tbl[itme] === 'Complete'){
-    elem.rows[++itme].style.background = "green"
+      elem.rows[++itme].style.background = "green"
     }
     if(tbl[itme] === 'In Progress'){
-    elem.rows[++itme].style.background = "orange"
+      elem.rows[++itme].style.background = "orange"
     }
     if(tbl[itme] === 'Not Started'){
-    elem.rows[++itme].style.background = "red"
+      elem.rows[++itme].style.background = "red"
     }
 
   }

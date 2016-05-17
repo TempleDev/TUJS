@@ -148,18 +148,26 @@
       otpt.innerHTML = diffDays + " Days";
     };
 
-    //takes in a id of a table(or gridview) and returns an array
-    //of passed in column
-    TUJS.TableColumnToArray = function(tbl, colNum){
-      tbl = TUJS.E(tbl);
-      var list = [];
-      var tabCount = tbl.rows.length;
-      console.log(tbl);
-      for(var x = 1; x < tabCount; x++){
-        list[x - 1] = tbl.rows[x].cells[colNum].innerHTML;
+//sub library for manipulating the tables(or gridviews) on a web page
+   TUJS.Table = {
+
+     //pass in a column number with the table and it returns an array of the contents
+       ColumnToArray: function(tbl, colNum){
+         tbl = TUJS.E(tbl);
+         var list = [];
+         var tabCount = tbl.rows.length;
+         console.log(tbl);
+         for(var x = 1; x < tabCount; x++){
+           list[x - 1] = tbl.rows[x].cells[colNum].innerHTML;
+         }
+         return list;
+      },
+
+      ColumntoList: function(){
+        console.log('list');
       }
-      return list;
     };
+
 
     ///>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>End of library<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     //call things on load
