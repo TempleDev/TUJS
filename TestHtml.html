@@ -2,53 +2,48 @@
 <html>
 <head>
   <title>Page Title</title>
-  <style>
-  .bad {
-    color: green;
-  }
-  .good {
-    color: black;
-  }
-  h1 {
-    text-align: center;
-  }
-  </style>
-
+  <script src="TUJS.js"></script>
 </head>
 
 <body>
-  <h1 class="bad" id="test1">TUJS Examples</h1>
+  <h1 class="bad" id="test1" style="text-align:center;">TUJS Examples</h1>
+  <h2style="text-align:center;">Calc</h2>
+  <div id="calculate" style="border-bottom: 2px solid black;">
+    <input id="first" />
+    <input id="second" onkeyup="TUJS.Calc('first', 'second', '+', 'test1')"/>
+    <select name="" id="selectOperator">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+      <option value="%">%</option>
+    </select>
+    <button type="Button" id="selector" onclick="addit()">Calculate</button>
+    <label id="lblCalc"></label>
+    <br><br>
+  </div>
 
-  <input id="first" />
-  <input id="second" onkeyup="TUJS.Calc('first', 'second', '+', 'test1')"/>
-  <select name="" id="selectOperator">
-    <option value="+">+</option>
-    <option value="-">-</option>
-    <option value="*">*</option>
-    <option value="/">/</option>
-    <option value="%">%</option>
-  </select>
-  <button type="Button" id="selector" onclick="addit()">Calculate</button>
-  <label id="lblCalc"></label>
-  <br><br>
-  <hr>
-
-  <button type="Button" id="selector3" onclick="TUJS.HideShow('lblhide', 200);">toggle</button>
-  <label id="lblhide">Hide THIS</label>
-  <br><br>
-  <hr>
-
+<h2style="text-align:center;">Contains</h2>
+<div id="containers" style="border-bottom: 2px solid black;">
   <button type="Button" id="selector4" onclick="TUJS.E('lblContains').innerHTML = TUJS.Contains('lblContainsEx', 'W')">Contains</button>
   <label id="lblContainsEx">if there is an W in this sentence it will return true-----</label>
   <label id="lblContains"></label>
-  <br><br><hr>
+  <br><br>
+</div>
+
+<h2style="text-align:center;">Date Calc</h2>
+<div id="dater" style="border-bottom: 2px solid black;">
   <input type="Date" name="name" id="date1">
   <input type="Date" name="name" id="date2">
   <button type="button" name="button" id="btnDateDiff"
   onclick="TUJS.DateDifference('date1', 'date2', 'lblDate')">Calculate the difference in Dates
 </button>
 <label id="lblDate"></label>
-<br><br><hr>
+<br><br>
+</div>
+
+<h2style="text-align:center;">Table Demo</h2>
+<div id="TableDemo" style="border-bottom: 2px solid black;">
 <table style="width:40%" id="tblDemo">
   <tr>
     <th>First Name</th>
@@ -88,11 +83,11 @@
   </tr>
 </table>
 <button type="button" name="button" onclick="findStatus()">Visualize Status</button>
+<button type="button" name="button" onclick="removeElement()">Delete Peter Pan</button>
 <label id="lblTableDemo"></label>
-<br><br><hr>
+<br><br>
+</div>
 </body>
-
-<script src="TUJS.js"></script>
 
 <script type="text/javascript">
 
@@ -102,6 +97,7 @@ function addit(){
 }
 
 function findStatus(){
+  //console.log(TUJS.Table.ColumnToArray('tblDemo', 3));
   var tbl =  TUJS.Table.ColumnToArray('tblDemo', 3);
   var elem =  TUJS.E('tblDemo');
   for(itme in tbl){
@@ -115,9 +111,23 @@ function findStatus(){
     if(tbl[itme] === 'Not Started'){
       elem.rows[++itme].style.background = "red"
     }
-
   }
 }
+
+function removeElement(Peter){
+  var tbl =  TUJS.Table.ColumnToArray('tblDemo', 0);
+  var elem =  TUJS.E('tblDemo');
+  for(itme in tbl){
+    console.log(tbl[itme]);
+    if(tbl[itme] === 'Peter'){
+      elem.deleteRow(++itme);
+    }
+  }
+  console.log(tbl);
+}
+
+
+
 
 </script>
 </html>

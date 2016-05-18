@@ -135,6 +135,7 @@
       return [ myWidth, myHeight ];
     };
 
+    
     //returns the difference of two dates (in Days) as inputs
     TUJS.DateDifference = function(date1, date2, otpt){
       otpt = TUJS.E(otpt);
@@ -163,8 +164,8 @@
          return list;
       },
 
-      ColumntoList: function(){
-        console.log('list');
+      ColumnToList: function(){
+        //
       }
     };
 
