@@ -105,16 +105,6 @@
       return false;
     };
 
-    //toggles an element as hidden or not based on what it currently is
-    //NEEDS JQUERY
-    TUJS.HideShow = function (elem, totTime){
-      var tag = TUJS.E(elem);
-      if(totTime === undefined){
-        totTime = 0;
-      }
-      $(tag).toggle(totTime);
-    };
-
     //will return an array of the window size of the screen you are on
     TUJS.getWindowSize = function() {
       var myWidth = 0, myHeight = 0;
@@ -135,7 +125,7 @@
       return [ myWidth, myHeight ];
     };
 
-    
+
     //returns the difference of two dates (in Days) as inputs
     TUJS.DateDifference = function(date1, date2, otpt){
       otpt = TUJS.E(otpt);
