@@ -3,11 +3,18 @@
   'use strict';
 
   //add jquery to project
-  var script = document.createElement('script');
+  var JQscript = document.createElement('script');
   //script.src = 'http://code.jquery.com/jquery-2.2.0.min.js';
-  script.src = "Jquery-2.2.0.js";
-  script.type = 'text/javascript';
-  document.getElementsByTagName('head')[0].appendChild(script);
+  JQscript.src = "Jquery-2.2.0.js";
+  JQscript.type = 'text/javascript';
+  document.getElementsByTagName('head')[0].appendChild(JQscript);
+
+
+  var Tblscript = document.createElement('script');
+  Tblscript.src = "tableController.js";
+  Tblscript.type = 'text/javascript';
+  document.getElementsByTagName('head')[0].appendChild(Tblscript);
+
 
   function define_TUJS() {
 
@@ -139,31 +146,66 @@
       otpt.innerHTML = diffDays + " Days";
     };
 
-//sub library for manipulating the tables(or gridviews) on a web page
-   TUJS.Table = {
-
-     //pass in a column number with the table and it returns an array of the contents
-       ColumnToArray: function(tbl, colNum){
-         tbl = TUJS.E(tbl);
-         var list = [];
-         var tabCount = tbl.rows.length;
-         console.log(tbl);
-         for(var x = 1; x < tabCount; x++){
-           list[x - 1] = tbl.rows[x].cells[colNum].innerHTML;
-         }
-         return list;
-      },
-
-      ColumnToList: function(){
-        //
-      }
+    //object call to build a table object form
+    //the tableController js page
+    TUJS.tableController = function() {
+      var tbl = new Table();
+      return tbl;
     };
 
+
+    //Armond, Kyler's, and Rob's gridview auto filter
+    TUJS.Search_Gridview = function(strKey, strGV, column) {
+        column++;
+        //string of what is typed in
+        //console.log("Before: "+strKey.value.toLowerCase());
+        var strData = strKey.value.toLowerCase().split(" ");
+        // console.log(strData);
+
+        //raw data from table
+        var tblData = document.getElementById(strGV);
+        var table = [];
+        var colInfo = [];
+        var styleDisplay = "";
+        // i is each row in the table.
+        for (var i = 0; i < tblData.rows.length; i++) {
+
+            //all info in row[i]
+            var rowData = tblData.rows[i].innerHTML;
+
+            //splits row and makes arrays ex instead of <td>a</td>....
+            var rowInfo = rowData.split("<td>");
+            for (var j = 1; j < rowInfo.length; j++) {
+                table[i] = rowInfo;
+            }
+             styleDisplay = 'none';
+        }
+        for (var k = 1; k < table.length; k++) {
+            colInfo[k] = table[k][column];
+        }
+
+      //  console.log(table);
+        //runs through the string that user enters
+        for (var s = 1; s < table.length; s++) {
+
+          //  console.log(strData);
+            var str = colInfo[s].toLowerCase();
+
+            if (str.indexOf(strData) >= 0) {
+              //  console.log("Found");
+                styleDisplay = '';
+            }
+            else {
+              //  console.log("Didnt find");
+                styleDisplay = 'none';
+            }
+            tblData.rows[s].style.display = styleDisplay;
+        }
+    };
 
     ///>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>End of library<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     //call things on load
     return TUJS;
-
   }
 
   if (typeof(TUJS) === 'undefined') {

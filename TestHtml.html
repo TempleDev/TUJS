@@ -3,8 +3,6 @@
 <head>
   <title>Page Title</title>
   <script src="TUJS.js"></script>
-  <script src="Table.js"></script>
-    <script src="test.js"></script>
 </head>
 
 <body>
@@ -85,7 +83,8 @@
     </tr>
   </table>
   <button type="button" name="button" onclick="findStatus()">Visualize Status</button>
-  <button type="button" name="button" onclick="removeElement()">Delete Peter Pan</button>
+  <input  name="name" value="" placeholder="First Name" onkeyup="TUJS.Search_Gridview(this, 'tblDemo', 0)" />
+  <input  name="name" value="" placeholder="Status" onkeyup="TUJS.Search_Gridview(this, 'tblDemo', 3)" />
   <label id="lblTableDemo"></label>
   <br><br>
 </div>
@@ -100,8 +99,7 @@ function addit(){
 }
 
 function findStatus(){
-  //console.log(TUJS.Table.ColumnToArray('tblDemo', 3));
-  var tbl =  TUJS.Table.ColumnToArray('tblDemo', 3);
+  var tbl =  TUJS.tableController().ColumnToArray('tblDemo', 3);
   var elem =  TUJS.E('tblDemo');
   for(itme in tbl){
     console.log(tbl[itme]);
@@ -116,21 +114,6 @@ function findStatus(){
     }
   }
 }
-
-function removeElement(Peter){
-  var tbl =  TUJS.Table.ColumnToArray('tblDemo', 0);
-  var elem =  TUJS.E('tblDemo');
-  for(itme in tbl){
-    console.log(tbl[itme]);
-    if(tbl[itme] === 'Peter'){
-      elem.deleteRow(++itme);
-    }
-  }
-  console.log(tbl);
-}
-
-
-
 
 </script>
 </html>
