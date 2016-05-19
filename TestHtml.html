@@ -8,12 +8,13 @@
 
 <body>
 
-
+  
   <h1 class="bad" id="test1" style="text-align:center;">TUJS Examples</h1>
+    <button type="Button" id="selector" onclick="TUJS.CloseWindow()">Close</button>
   <h2style="text-align:center;">Calc</h2>
   <div id="calculate" style="border-bottom: 2px solid black;">
-    <input id="first" />
-    <input id="second" onkeyup="TUJS.Calc('first', 'second', '+', 'test1')"/>
+    <input class="test1" id="first" />
+    <input class="test1" id="second" onkeyup="TUJS.Calc('first', 'second', '+', 'test1')"/>
     <select name="" id="selectOperator">
       <option value="+">+</option>
       <option value="-">-</option>
@@ -21,7 +22,8 @@
       <option value="/">/</option>
       <option value="%">%</option>
     </select>
-    <button type="Button" id="selector" onclick="addit()">Calculate</button>
+    <button type="Button" class="test1" id="selector" onclick="addit()">Calculate</button>
+    <button type="Button" class="test1" id="selector" onclick="TUJS.AddNumbers('.test1')">Renumber</button>
     <label id="lblCalc"></label>
     <br><br>
   </div>
@@ -95,7 +97,7 @@
 </div>
 
 
-</body>
+</BODY>
 
 <script type="text/javascript">
 
