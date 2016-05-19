@@ -3,9 +3,12 @@
 <head>
   <title>Page Title</title>
   <script src="TUJS.js"></script>
+
 </head>
 
 <body>
+
+
   <h1 class="bad" id="test1" style="text-align:center;">TUJS Examples</h1>
   <h2style="text-align:center;">Calc</h2>
   <div id="calculate" style="border-bottom: 2px solid black;">
@@ -83,11 +86,15 @@
     </tr>
   </table>
   <button type="button" name="button" onclick="findStatus()">Visualize Status</button>
-  <input  name="name" value="" placeholder="First Name" onkeyup="TUJS.Search_Gridview(this, 'tblDemo', 0)" />
-  <input  name="name" value="" placeholder="Status" onkeyup="TUJS.Search_Gridview(this, 'tblDemo', 3)" />
+  <input  name="name" value="" placeholder="First Name" onkeyup="TUJS.tableController().SearchGridview(this, 'tblDemo', 0)" />
+  <input  name="name" value="" placeholder="Status" onkeyup="TUJS.tableController().SearchGridview(this, 'tblDemo', 3)" />
   <label id="lblTableDemo"></label>
   <br><br>
 </div>
+
+</div>
+
+
 </body>
 
 <script type="text/javascript">
