@@ -13,13 +13,13 @@ Temple University IS&amp;T Capstone JavaScript Library
 
 2) place the following code on any page that you want to use the Library. NOTE that you may need to reassign the folders based on if you put the library inside another folder:
 ```
-\<script src="TUJS/TUJS.js">\</script>
+<script src="TUJS/TUJS.js"></script>
 ```
 
 3) To call any of the following funcitons from the library you to call the Library itself followed by the functions with any parameters that it may take.  For example, the following code will display the version function in the console when the button is clicked:
 
 ```
-\<button onclick"TUJS.ver()">Click for Version\</button>
+<button onclick"TUJS.ver()">Click for Version</button>
 ```
 
 ## Usable Functions
@@ -50,11 +50,11 @@ column of a table into a list:
 var x = TUJS.tableController().ColumnToArray('tableName', columnNumber);
 ```
 ######INPUT: There are currently 3 methods for the table class:
-        1) ColumnToArray(string TableName, int columnNumber);
-        2) SearchGridview(input Textbox, Table Name, Column of where you are searching);
+ 1) ColumnToArray(string TableName, int columnNumber);
+ 2) SearchGridview(input Textbox, Table Name, Column of where you are searching);
 ######OUTPUT:
-        1) Array containing strings of the contents in that column
-        2) NONE** this function manipulates the table itself and filters itself
+ 1) Array containing strings of the contents in that column
+ 2) NONE** this function manipulates the table itself and filters itself
 
 ####Hide and Show Content:
 ######Notes:
