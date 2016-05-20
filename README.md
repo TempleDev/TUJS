@@ -1,7 +1,7 @@
 
 #TUJS
 
-Temple University IS&amp;T Capstone JavaScript Library
+Temple University IS&amp;T Capstone JavaScript Library </br>
 Contact the Author @ [David.Hasselhoff@Temple.edu](tumail.temple.edu)</br>
 
  **OVERVIEW:**
