@@ -12,13 +12,13 @@ Temple University IS&amp;T Capstone JavaScript Library
 1) Download the zip file, extract it, and place the TUJS folder inside the root folder of your application (where your main pages are stored). Make sure that both JQuery.js and TUJS.js are inside the folder.
 
 2) place the following code on any page that you want to use the Library. NOTE that you may need to reassign the folders based on if you put the library inside another folder:
-```
+```HTML
 <script src="TUJS/TUJS.js"></script>
 ```
 
 3) To call any of the following funcitons from the library you to call the Library itself followed by the functions with any parameters that it may take.  For example, the following code will display the version function in the console when the button is clicked:
 
-```
+```HTML
 <button onclick"TUJS.ver()">Click for Version</button>
 ```
 
@@ -46,7 +46,7 @@ can be returned as an float to perform more calculations or returns nothing and 
 The table editor is a useful set of functions that help manipulate any tables or gridviews on client side.  Because of the amount of things you can do with this function it is now a dedicated function "class".
 to use any of the functions, you must first call the library (TUJS) followed by the instantiation of the table class (tableController()) then call the method.  For Example to call the method that returns the
 column of a table into a list:  
-```
+```JavaScript
 var x = TUJS.tableController().ColumnToArray('tableName', columnNumber);
 ```
 ######INPUT: There are currently 3 methods for the table class:
