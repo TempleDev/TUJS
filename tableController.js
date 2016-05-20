@@ -15,11 +15,6 @@ var Table = function () {
       return list;
    },
 
-   //takes in
-   ColumnToList: function(){
-     //
-   },
-
    //Armond, Kyler's, and Rob's gridview auto filter
    SearchGridview: function(strKey, strGV, column) {
        column++;
@@ -68,5 +63,5 @@ var Table = function () {
        }
    }
 
-  };
-};
+ }; //end of return
+}; //end of funtion

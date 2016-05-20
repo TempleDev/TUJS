@@ -8,9 +8,9 @@
 
 <body>
 
-  
+
   <h1 class="bad" id="test1" style="text-align:center;">TUJS Examples</h1>
-    <button type="Button" id="selector" onclick="TUJS.CloseWindow()">Close</button>
+  <button type="Button" id="selector" onclick="TUJS.CloseWindow()">Close</button>
   <h2style="text-align:center;">Calc</h2>
   <div id="calculate" style="border-bottom: 2px solid black;">
     <input class="test1" id="first" />
@@ -56,36 +56,14 @@
       <th>Age</th>
       <th>Status</th>
     </tr>
-    <tr>
-      <td>John</td>
-      <td>Hammond</td>
-      <td>50</td>
-      <td>In Progress</td>
-    </tr>
-    <tr>
-      <td>Mitch</td>
-      <td>Man</td>
-      <td>25</td>
-      <td>Complete</td>
-    </tr>
-    <tr>
-      <td>Kris</td>
-      <td>Kringle</td>
-      <td>232</td>
-      <td>Not Started</td>
-    </tr>
-    <tr>
-      <td>Peter</td>
-      <td>Pan</td>
-      <td>13?</td>
-      <td>Complete</td>
-    </tr>
-    <tr>
-      <td>Albus</td>
-      <td>Dumbledore</td>
-      <td>132</td>
-      <td>Not Started</td>
-    </tr>
+    <tr>  <td>John</td><td>Hammond</td>  <td>50</td>  <td>In Progress</td>  </tr>
+    <tr>  <td>Mitch</td>  <td>Man</td>  <td>25</td>  <td>Complete</td>  </tr>
+    <tr>  <td>Kris</td>  <td>Kringle</td>  <td>232</td>  <td>Not Started</td>  </tr>
+    <tr>  <td>Peter</td>  <td>Pan</td>  <td>13?</td><td>Complete</td>  </tr>
+    <tr>  <td>Albus</td>  <td>Dumbledore</td>  <td>132</td>  <td>Not Started</td>  </tr>
+    <tr>  <td>Jim</td>  <td>Halpert</td>  <td>32</td>  <td>In progress</td>  </tr>
+    <tr>  <td>Kurt</td>  <td>Russell</td>  <td>42</td>  <td>complete</td>  </tr>
+    <tr>  <td>Tim</td>  <td>Burton</td>  <td>51</td>  <td>Not Started</td>  </tr>
   </table>
   <button type="button" name="button" onclick="findStatus()">Visualize Status</button>
   <input  name="name" value="" placeholder="First Name" onkeyup="TUJS.tableController().SearchGridview(this, 'tblDemo', 0)" />
@@ -93,14 +71,11 @@
   <label id="lblTableDemo"></label>
   <br><br>
 </div>
-
 </div>
 
-
-</BODY>
+</body>
 
 <script type="text/javascript">
-
 
 function addit(){
   var op = TUJS.E('selectOperator').value;
@@ -112,13 +87,13 @@ function findStatus(){
   var elem =  TUJS.E('tblDemo');
   for(itme in tbl){
     console.log(tbl[itme]);
-    if(tbl[itme] === 'Complete'){
+    if(tbl[itme].toLowerCase() === 'complete'){
       elem.rows[++itme].style.background = "green"
     }
-    if(tbl[itme] === 'In Progress'){
+    if(tbl[itme].toLowerCase() === 'in progress'){
       elem.rows[++itme].style.background = "orange"
     }
-    if(tbl[itme] === 'Not Started'){
+    if(tbl[itme].toLowerCase() === 'not started'){
       elem.rows[++itme].style.background = "red"
     }
   }

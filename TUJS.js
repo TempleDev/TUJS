@@ -176,13 +176,12 @@
 
         TUJS.CloseWindow = function () {
             window.close();
-        }
+        };
 
-        //Sesson Time out.  To be used on pages that require users to 
+        //Sesson Time out.  To be used on pages that require users to
         //log out for security reasons
 
         TUJS.SessionTimeOut = function (wait, redirect) {
-
             var idleTimer = null;
             var idleState = false;
             var idleWait = wait;
@@ -202,10 +201,8 @@
                     }, idleWait);
                 });
             });
-
             $("body").trigger("mousemove");
-
-        }
+        };
 
         ///>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>End of library<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
         //call things on load
