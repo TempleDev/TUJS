@@ -43,7 +43,7 @@ can be returned as an float to perform more calculations or returns nothing and 
 The table editor is a useful set of functions that help manipulate any tables or gridviews on client side.  Because of the amount of things you can do with this function it is now a dedicated function "class".
 to use any of the functions, you must first call the library (TUJS) followed by the instantiation of the table class (tableController()) then call the method.  For Example to call the method that returns the
 column of a table into a list:
-var x = TUJS.tableController().ColumnToArray('tableName', columnNumber);
+        var x = TUJS.tableController().ColumnToArray('tableName', columnNumber);
 ######INPUT: There are currently 3 methods for the table class:
         1) ColumnToArray(string TableName, int columnNumber);
         2) SearchGridview(input Textbox, Table Name, Column of where you are searching);
