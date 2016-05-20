@@ -51,9 +51,11 @@ var x = TUJS.tableController().ColumnToArray('tableName', columnNumber);
 ```
 ######INPUT: There are currently 3 methods for the table class:
  1) ColumnToArray(string TableName, int columnNumber);
+
  2) SearchGridview(input Textbox, Table Name, Column of where you are searching);
 ######OUTPUT:
  1) Array containing strings of the contents in that column
+ 
  2) NONE** this function manipulates the table itself and filters itself
 
 ####Hide and Show Content:
