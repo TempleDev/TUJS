@@ -1,46 +1,103 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>Page Title</title>
-  <style>
-    .bad {
-      color: green;
-    }
-    .good {
-      color: black;
-    }
-    h1 {
-      text-align: center;
-    }
-  </style>
+  <script src="TUJS.js"></script>
 
 </head>
 
 <body>
-  <h1 class="bad" id="test1">Header</h1>
-  <h1 class="bad" id="test4" onmouseover="TUJS.AddClock('test4')" onmouseout="innerHTML='second Header'"> second Header</h1>
-  <p id="genPar">A generic paragraph.</p>
 
-  <input id="first" />
-  <input id="second" onkeyup="TUJS.Calc('first', 'second', '/', 'test1')"/>
-  <button type="Button" id="selector" onclick="TUJS.add('first','second');">add</button>
-<button type="Button" id="selector3" onclick="TUJS.HideShow('test4');">toggle</button>
-  <button type="Button" id="selector2" onclick="calculateMult()">Multiply</button>
-    <button type="Button" id="selector4" onclick="TUJS.Contains('genPar', 'p')">Contains</button>
-  <h1 class="bad" id="test2">third Header</h1>
-  <h1 class="bad" id="test3">forth Header</h1>
+
+  <h1 class="bad" id="test1" style="text-align:center;">TUJS Examples</h1>
+  <button type="Button" id="selector" onclick="TUJS.CloseWindow()">Close</button>
+  <h2style="text-align:center;">Calc</h2>
+  <div id="calculate" style="border-bottom: 2px solid black;">
+    <input class="test1" id="first" />
+    <input class="test1" id="second" onkeyup="TUJS.Calc('first', 'second', '+', 'test1')"/>
+    <select name="" id="selectOperator">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+      <option value="%">%</option>
+    </select>
+    <button type="Button" class="test1" id="selector" onclick="addit()">Calculate</button>
+    <button type="Button" class="test1" id="selector" onclick="TUJS.AddNumbers('.test1')">Renumber</button>
+    <label id="lblCalc"></label>
+    <br><br>
+  </div>
+
+  <h2style="text-align:center;">Contains</h2>
+  <div id="containers" style="border-bottom: 2px solid black;">
+    <button type="Button" id="selector4" onclick="TUJS.E('lblContains').innerHTML = TUJS.Contains('lblContainsEx', 'W')">Contains</button>
+    <label id="lblContainsEx">if there is an W in this sentence it will return true-----</label>
+    <label id="lblContains"></label>
+    <br><br>
+  </div>
+
+  <h2style="text-align:center;">Date Calc</h2>
+  <div id="dater" style="border-bottom: 2px solid black;">
+    <input type="Date" name="name" id="date1">
+    <input type="Date" name="name" id="date2">
+    <button type="button" name="button" id="btnDateDiff"
+    onclick="TUJS.DateDifference('date1', 'date2', 'lblDate')">Calculate the difference in Dates
+  </button>
+  <label id="lblDate"></label>
+  <br><br>
+</div>
+
+<h2style="text-align:center;">Table Demo</h2>
+<div id="TableDemo" style="border-bottom: 2px solid black;">
+  <table style="width:40%" id="tblDemo">
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Age</th>
+      <th>Status</th>
+    </tr>
+    <tr>  <td>John</td><td>Hammond</td>  <td>50</td>  <td>In Progress</td>  </tr>
+    <tr>  <td>Mitch</td>  <td>Man</td>  <td>25</td>  <td>Complete</td>  </tr>
+    <tr>  <td>Kris</td>  <td>Kringle</td>  <td>232</td>  <td>Not Started</td>  </tr>
+    <tr>  <td>Peter</td>  <td>Pan</td>  <td>13?</td><td>Complete</td>  </tr>
+    <tr>  <td>Albus</td>  <td>Dumbledore</td>  <td>132</td>  <td>Not Started</td>  </tr>
+    <tr>  <td>Jim</td>  <td>Halpert</td>  <td>32</td>  <td>In progress</td>  </tr>
+    <tr>  <td>Kurt</td>  <td>Russell</td>  <td>42</td>  <td>complete</td>  </tr>
+    <tr>  <td>Tim</td>  <td>Burton</td>  <td>51</td>  <td>Not Started</td>  </tr>
+  </table>
+  <button type="button" name="button" onclick="findStatus()">Visualize Status</button>
+  <input  name="name" value="" placeholder="First Name" onkeyup="TUJS.tableController().SearchGridview(this, 'tblDemo', 0)" />
+  <input  name="name" value="" placeholder="Status" onkeyup="TUJS.tableController().SearchGridview(this, 'tblDemo', 3)" />
+  <label id="lblTableDemo"></label>
+  <br><br>
+</div>
+</div>
+
 </body>
-  <script src="TUJS.js"></script>
-  <script type="text/javascript">
-function calculate(){
-//  document.getElementById('test2').innerHTML = TUJS.Calc('first','second', '/');
-     TUJS.E('test2').innerHTML = TUJS.Calc('first','second', '/');
+
+<script type="text/javascript">
+
+function addit(){
+  var op = TUJS.E('selectOperator').value;
+  TUJS.E('test4').value = TUJS.Calc('first', 'second', op, 'lblCalc');
 }
 
-function calculateMult(){
-//  document.getElementById('test2').innerHTML = TUJS.Calc('first','second', '/');
-     TUJS.E('test2').innerHTML = TUJS.Calc('first','second', '*', 'test2');
+function findStatus(){
+  var tbl =  TUJS.tableController().ColumnToArray('tblDemo', 3);
+  var elem =  TUJS.E('tblDemo');
+  for(itme in tbl){
+    console.log(tbl[itme]);
+    if(tbl[itme].toLowerCase() === 'complete'){
+      elem.rows[++itme].style.background = "green"
+    }
+    if(tbl[itme].toLowerCase() === 'in progress'){
+      elem.rows[++itme].style.background = "orange"
+    }
+    if(tbl[itme].toLowerCase() === 'not started'){
+      elem.rows[++itme].style.background = "red"
+    }
+  }
 }
-  </script>
+
+</script>
 </html>
