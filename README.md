@@ -6,6 +6,7 @@ Temple University IS&amp;T Capstone JavaScript Library
  **OVERVIEW:**
  This Library is a compilation of functions and features that are helpful with Temple IS&T Capstone Client side features.  You are free to use it and modify it as needed.  
 
+
  *SOME FEATURES USE JQUERY* version 2.2.0 (the latest version at the time of build) which is included in the zip file. You can use that which is referenced in the library, or if you are using a newer version you can remove it and use .
 
 *To use this Library:*
