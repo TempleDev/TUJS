@@ -15,13 +15,28 @@ var Table = function () {
       return list;
    },
 
-   //Armond, Kyler's, and Rob's gridview auto filter
+   RowToArray: function(tbl, info, colNum){
+     tbl = TUJS.E(tbl);
+     var input = (TUJS.E(info) === null) ? info : TUJS.E(info).value;
+     var list = [];
+     var tablHeight = tbl.rows.length;
+     var tblLength = tbl.rows[0].cells.length;
+     for(var x = 1; x < tablHeight; x++){
+       if(tbl.rows[x].cells[colNum].innerHTML === input){
+         for(var y = 0; y < tblLength; y++){
+           list[y] = tbl.rows[x].cells[y].innerHTML;
+         }
+       }
+     }
+     console.log(list);
+   },
+
+   // Authors: Armond Smith, Kyler Love, and Rob Zahorchak gridview auto filter
    SearchGridview: function(strKey, strGV, column) {
        column++;
        //string of what is typed in
        var strData = strKey.value.toLowerCase().split(" ");
        // console.log(strData);
-
        //raw data from table
        var tblData = document.getElementById(strGV);
        var table = [];
@@ -29,10 +44,8 @@ var Table = function () {
        var styleDisplay = "";
        // i is each row in the table.
        for (var i = 0; i < tblData.rows.length; i++) {
-
            //all info in row[i]
            var rowData = tblData.rows[i].innerHTML;
-
            //splits row and makes arrays ex instead of <td>a</td>....
            var rowInfo = rowData.split("<td>");
            for (var j = 1; j < rowInfo.length; j++) {
@@ -43,14 +56,11 @@ var Table = function () {
        for (var k = 1; k < table.length; k++) {
            colInfo[k] = table[k][column];
        }
-
      //  console.log(table);
        //runs through the string that user enters
        for (var s = 1; s < table.length; s++) {
-
          //  console.log(strData);
            var str = colInfo[s].toLowerCase();
-
            if (str.indexOf(strData) >= 0) {
              //  console.log("Found");
                styleDisplay = '';
@@ -62,6 +72,5 @@ var Table = function () {
            tblData.rows[s].style.display = styleDisplay;
        }
    }
-
  }; //end of return
 }; //end of funtion

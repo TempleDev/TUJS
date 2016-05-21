@@ -1,20 +1,19 @@
+
+//add jquery to project
+var JQscript = document.createElement('script');
+//script.src = 'http://code.jquery.com/jquery-2.2.0.min.js';
+JQscript.src = "Jquery-2.2.0.js";
+JQscript.type = 'text/javascript';
+document.getElementsByTagName('head')[0].appendChild(JQscript);
+
+var Tblscript = document.createElement('script');
+Tblscript.src = "tableController.js";
+Tblscript.type = 'text/javascript';
+document.getElementsByTagName('head')[0].appendChild(Tblscript);
+
 (function(window) {
 
     'use strict';
-
-    //add jquery to project
-    var JQscript = document.createElement('script');
-    //script.src = 'http://code.jquery.com/jquery-2.2.0.min.js';
-    JQscript.src = "Jquery-2.2.0.js";
-    JQscript.type = 'text/javascript';
-    document.getElementsByTagName('head')[0].appendChild(JQscript);
-
-    var Tblscript = document.createElement('script');
-    Tblscript.src = "tableController.js";
-    Tblscript.type = 'text/javascript';
-    document.getElementsByTagName('head')[0].appendChild(Tblscript);
-
-
 
     function define_TUJS() {
 
@@ -56,7 +55,6 @@
                     doc.innerHTML += NothingMatters;
                 }
             }, 3000);
-
         };
 
         //the calc function takes in 3 or 4 arguments and will perform the
@@ -99,14 +97,14 @@
         };
 
         //turn the innerHTML of any element into a clock
-        TUJS.AddClock = function(elem) {
-            var tag = TUJS.E(elem);
-            var now = new Date();
-            tag.innerHTML = now.toLocaleTimeString();
+        TUJS.createClock = function(elem) {
+          elem = (TUJS.E(elem) === null) ? elem : TUJS.E(elem);
+            setInterval(function(){elem.innerHTML = new Date().toLocaleTimeString();}, 500);
         };
 
         //bool if the obj is found inside the Element(elem) is in passed array
         TUJS.Contains = function(elem, obj) {
+          elem = (TUJS.E(elem) === null) ? elem : TUJS.E(elem);
             var a = TUJS.E(elem).innerHTML;
             var i = a.length;
             while (i--) {
@@ -144,15 +142,20 @@
 
         //returns the difference of two dates (in Days) as inputs
         TUJS.DateDifference = function(date1, date2, otpt) {
-            otpt = TUJS.E(otpt);
-            date1 = TUJS.E(date1).value;
-            date2 = TUJS.E(date2).value;
+            date1 = (TUJS.E(date1) === null) ? date1.value : TUJS.E(date1).value;
+            date2 = (TUJS.E(date2) === null) ? date2.value : TUJS.E(date2).value;
+            otpt = (TUJS.E(otpt) === null) ? otpt : TUJS.E(otpt);
 
             date1 = Date.parse(date1);
             date2 = Date.parse(date2);
             var timeDiff = Math.abs(date2 - date1);
             var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
-            otpt.innerHTML = diffDays + " Days";
+            if(otpt === undefined){
+             console.log(diffDays);
+              return diffDays;
+            }else{
+            otpt.innerHTML = diffDays;
+          }
         };
 
         //object call to build a table object form

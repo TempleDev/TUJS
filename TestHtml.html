@@ -2,14 +2,12 @@
 <html>
 <head>
   <title>Page Title</title>
-  <script src="TUJS.js"></script>
-
+<script src="TUJS.js"></script>
 </head>
 
 <body>
-
-
   <h1 class="bad" id="test1" style="text-align:center;">TUJS Examples</h1>
+  <h2 style="text-align: center;" id="test2" onclick="TUJS.createClock('test2');">Click to convert to clock</h2>
   <button type="Button" id="selector" onclick="TUJS.CloseWindow()">Close</button>
   <h2style="text-align:center;">Calc</h2>
   <div id="calculate" style="border-bottom: 2px solid black;">
@@ -46,7 +44,6 @@
   <label id="lblDate"></label>
   <br><br>
 </div>
-
 <h2style="text-align:center;">Table Demo</h2>
 <div id="TableDemo" style="border-bottom: 2px solid black;">
   <table style="width:40%" id="tblDemo">
@@ -66,22 +63,22 @@
     <tr>  <td>Tim</td>  <td>Burton</td>  <td>51</td>  <td>Not Started</td>  </tr>
   </table>
   <button type="button" name="button" onclick="findStatus()">Visualize Status</button>
+  <input  name="name" value="" placeholder="Status" id="gvSearch" />
+  <button type="button" name="button" onclick="TUJS.tableController().RowToArray('tblDemo', 'gvSearch', 1)">Row To Array input</button>
+  <button type="button" name="button" onclick="TUJS.tableController().RowToArray('tblDemo', 'Dumbledore', 1)">Row To Array Value</button>
   <input  name="name" value="" placeholder="First Name" onkeyup="TUJS.tableController().SearchGridview(this, 'tblDemo', 0)" />
   <input  name="name" value="" placeholder="Status" onkeyup="TUJS.tableController().SearchGridview(this, 'tblDemo', 3)" />
   <label id="lblTableDemo"></label>
   <br><br>
 </div>
 </div>
-
 </body>
 
 <script type="text/javascript">
-
 function addit(){
   var op = TUJS.E('selectOperator').value;
   TUJS.E('test4').value = TUJS.Calc('first', 'second', op, 'lblCalc');
 }
-
 function findStatus(){
   var tbl =  TUJS.tableController().ColumnToArray('tblDemo', 3);
   var elem =  TUJS.E('tblDemo');
