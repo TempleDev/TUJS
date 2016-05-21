@@ -29,6 +29,7 @@ Contact the Author @ [David.Hasselhoff@Temple.edu](http://tumail.temple.edu)</br
 [Calculations](#calculations)<br/>
 [Table Editor](#table-editor)<br/>
 [Get Size of Page](#get-size-of-page)<br/>
+[Create Clock](#create-clock)<br/>
 [Date Difference](#date-difference)<br/>
 [Contains](#contains)<br/>
 
@@ -47,22 +48,26 @@ can be returned as an float to perform more calculations or returns nothing and 
 The table editor is a useful set of functions that help manipulate any tables or gridviews on client side.  Because of the amount of things you can do with this function it is now a dedicated function "class".
 to use any of the functions, you must first call the library (TUJS) followed by the instantiation of the table class (tableController()) then call the method.  For Example to call the method that returns the
 column of a table into a list:  
-```JavaScript
-var x = TUJS.tableController().ColumnToArray('tableName', columnNumber);
-```
+
 ######INPUT: There are currently 3 methods for the table class:
  1) ColumnToArray(string TableName, int columnNumber);
-
+ ```JavaScript
+ var x = TUJS.tableController().ColumnToArray('tableName', columnNumber);
+ ```
  2) RowToArray(string TableName, string element/literal, int column Number);
-
+ ```JavaScript
+ var x = TUJS.tableController().RowToArray('tableName','info', columnNumber);
+ ```
  3) SearchGridview(input Textbox, Table Name, Column of where you are searching);
+ ```JavaScript
+ var x = TUJS.tableController().SearchGridview(this (input object), table name, columnNumber);
+ ```
 ######OUTPUT:
  1) Array containing strings of the contents in that column
 
  2) Array containing strings of the contents in the row.  the second input can either be a string of an element(ie Textbox), or it can be a literal string for text you are searching for (ie "John")
 
  3) NONE** this function manipulates the table itself and filters itself
-
 
 ####Get Size of Page:
 ######Notes:
@@ -85,7 +90,6 @@ TUJS.createClock(element);
 just the element you are converting into a clock
 ######OUTPUT:
 nothing. the element you call turns into a working clock
-
 
 ####Date Difference:
 ######Notes:

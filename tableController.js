@@ -8,7 +8,7 @@ var Table = function () {
       tbl = TUJS.E(tbl);
       var list = [];
       var tabCount = tbl.rows.length;
-      console.log(tbl);
+      //console.log(tbl);
       for(var x = 1; x < tabCount; x++){
         list[x - 1] = tbl.rows[x].cells[colNum].innerHTML;
       }
@@ -28,7 +28,8 @@ var Table = function () {
          }
        }
      }
-     console.log(list);
+    // console.log(list);
+     return list;
    },
 
    // Authors: Armond Smith, Kyler Love, and Rob Zahorchak gridview auto filter
