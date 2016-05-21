@@ -28,7 +28,6 @@ Contact the Author @ [David.Hasselhoff@Temple.edu](http://tumail.temple.edu)</br
 ### Below is a list of all functions in the Library:
 [Calculations](#calculations)<br/>
 [Table Editor](#table-editor)<br/>
-[Hide and Show Content](#hide-and-show-content)<br/>
 [Get Size of Page](#get-size-of-page)<br/>
 [Date Difference](#date-difference)<br/>
 [Contains](#contains)<br/>
@@ -54,34 +53,57 @@ var x = TUJS.tableController().ColumnToArray('tableName', columnNumber);
 ######INPUT: There are currently 3 methods for the table class:
  1) ColumnToArray(string TableName, int columnNumber);
 
- 2) SearchGridview(input Textbox, Table Name, Column of where you are searching);
+ 2) RowToArray(string TableName, string element/literal, int column Number);
+
+ 3) SearchGridview(input Textbox, Table Name, Column of where you are searching);
 ######OUTPUT:
  1) Array containing strings of the contents in that column
- 
- 2) NONE** this function manipulates the table itself and filters itself
 
-####Hide and Show Content:
-######Notes:
-######INPUT:
-######OUTPUT:
+ 2) Array containing strings of the contents in the row.  the second input can either be a string of an element(ie Textbox), or it can be a literal string for text you are searching for (ie "John")
+
+ 3) NONE** this function manipulates the table itself and filters itself
 
 
 ####Get Size of Page:
 ######Notes:
+function to give you a 2 element array containing the height and width of the page
+```JavaScript
+TUJS.getWindowSize();
+```
 ######INPUT:
+nothing
 ######OUTPUT:
+two element array with the number of the height and width in pixels
+
+####Create Clock:
+######Notes:
+This is just a simple function that will turn an elements inner HTML into a working clock.
+```JavaScript
+TUJS.createClock(element);
+```
+######INPUT:
+just the element you are converting into a clock
+######OUTPUT:
+nothing. the element you call turns into a working clock
 
 
 ####Date Difference:
 ######Notes:
+This function takes in 2 or 3 arguments and calculates the difference in days between the two objects
 ######INPUT:
+3 inputs. date1, date2, 'optionally: element you want to display'
 ######OUTPUT:
-
+if you pass in 3 arguments it returns nothing and assigns the return to the third element.  if you pass in 2 arguments it returns the value of the calculation
 
 ####Contains:
 ######Notes:
+this simple function takes in two arguments and returns if the element is inside the object you pass
+```JavaScript
+TUJS.Contains(container, elementYoureLookingFor);
+```
 ######INPUT:
+2 arguments. the first is the id of the object or object itself of the container. the second is what you are looking for
 ######OUTPUT:
-
+boolean
 
 [Back to top](#usable-functions)
