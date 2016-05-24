@@ -39,7 +39,7 @@ This function takes in 3 OR 4 arguments.
 4 arguments:( First Textbox ID, Second Textbox ID, Operator as string, ID of Output Element).  Based on the Operator that you input (ie: '+'), the function will get the integer value of the two textbox inputs and perform the calculation returning the caclulated value.
 3 arguments:( First Textbox ID, Second Textbox ID, Operator as string).  Does the same calculation as with 4 arguements, but the function is now assignable. ie:
 ```JavaScript
-var ans = TUJS.Calc('txtbx1', 'txtbx2', '*'); 
+var ans = TUJS.Calc('txtbx1', 'txtbx2', '*');
 ```
 ######INPUT:
 4 Arguments (String, String, String, String) OR 3 Arguments (String, String, String)
@@ -97,6 +97,9 @@ nothing. the element you call turns into a working clock
 ####Date Difference:
 ######Notes:
 This function takes in 2 or 3 arguments and calculates the difference in days between the two objects
+```JavaScript
+TUJS.DateDifference = function(date1, date2, outputElement);
+```
 ######INPUT:
 3 inputs. date1, date2, 'optionally: element you want to display'
 ######OUTPUT:
