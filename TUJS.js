@@ -1,16 +1,9 @@
 
 //add jquery to project
 var JQscript = document.createElement('script');
-//script.src = 'http://code.jquery.com/jquery-2.2.0.min.js';
 JQscript.src = "Jquery-2.2.0.js";
 JQscript.type = 'text/javascript';
 document.getElementsByTagName('head')[0].appendChild(JQscript);
-
-// add the tableController "Class" to the DOM so that the table features can be used
-var Tblscript = document.createElement('script');
-Tblscript.src = "tableController.js";
-Tblscript.type = 'text/javascript';
-document.getElementsByTagName('head')[0].appendChild(Tblscript);
 
 (function(window) {
 
@@ -61,13 +54,10 @@ document.getElementsByTagName('head')[0].appendChild(Tblscript);
     //the calc function takes in 3 or 4 arguments and will perform the
     //passed in function
     TUJS.Calc = function(a, b, Operator, OutputElem) {
-
       //repurpose OutputElem into the object
       OutputElem = TUJS.E(OutputElem);
-
       var A = parseFloat(TUJS.E(a).value);
       var B = parseFloat(TUJS.E(b).value);
-
       var C = 0;
       switch (Operator) {
         case "+":
@@ -104,7 +94,7 @@ document.getElementsByTagName('head')[0].appendChild(Tblscript);
     //bool if the obj is found inside the Element(elem) is in passed array
     TUJS.Contains = function(elem, obj) {
       elem = (TUJS.E(elem) === null) ? elem : TUJS.E(elem);
-      var a = TUJS.E(elem).innerHTML;
+      var a = elem.innerHTML;
       var i = a.length;
       while (i--) {
         console.log(a[i]);
@@ -161,8 +151,7 @@ document.getElementsByTagName('head')[0].appendChild(Tblscript);
     //object call to build a table object form
     //the tableController js page
     TUJS.tableController = function() {
-      var tbl = new Table();
-      return tbl;
+      return new Table();
     };
 
     //Rename all elements of a class by adding numbers to the element name
@@ -176,14 +165,12 @@ document.getElementsByTagName('head')[0].appendChild(Tblscript);
     };
 
     //Close Window on a button click
-
     TUJS.CloseWindow = function () {
       window.close();
     };
 
     //Sesson Time out.  To be used on pages that require users to
     //log out for security reasons
-
     TUJS.SessionTimeOut = function (wait, redirect) {
       var idleTimer = null;
       var idleState = false;
@@ -207,7 +194,7 @@ document.getElementsByTagName('head')[0].appendChild(Tblscript);
       $("body").trigger("mousemove");
     };
 
-    ///>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>End of library<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>End of library<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     //call things on load
     return TUJS;
   }
@@ -218,3 +205,74 @@ document.getElementsByTagName('head')[0].appendChild(Tblscript);
   }
 
 })(window);
+
+//tableController function
+var Table = function () {
+
+  return {
+    //column to array takes a table id and number(column)
+    //and returns an array of elements in that column
+    ColumnToArray: function(tbl, colNum){
+      tbl = TUJS.E(tbl);
+      var list = [];
+      var tabCount = tbl.rows.length;
+      //console.log(tbl);
+      for(var x = 1; x < tabCount; x++){
+        list[x - 1] = tbl.rows[x].cells[colNum].innerHTML;
+      }
+      return list;
+    },
+
+    RowToArray: function(tbl, info, colNum){
+      tbl = TUJS.E(tbl);
+      var input = (TUJS.E(info) === null) ? info : TUJS.E(info).value;
+      var list = [];
+      var tablHeight = tbl.rows.length;
+      var tblLength = tbl.rows[0].cells.length;
+      for(var x = 1; x < tablHeight; x++){
+        if(tbl.rows[x].cells[colNum].innerHTML === input){
+          for(var y = 0; y < tblLength; y++){
+            list[y] = tbl.rows[x].cells[y].innerHTML;
+          }
+        }
+      }
+      // console.log(list);
+      return list;
+    },
+
+    // Authors: Armond Smith, Kyler Love, and Rob Zahorchak gridview auto filter
+    SearchGridview: function(strKey, strGV, column) {
+      column++;
+      //string of what is typed in
+      var strData = strKey.value.toLowerCase().split(" ");
+      // console.log(strData);
+      //raw data from table
+      var tblData = document.getElementById(strGV);
+      var table = [];
+      var colInfo = [];
+      var styleDisplay = "";
+      // i is each row in the table.
+      for (var i = 0; i < tblData.rows.length; i++) {
+        //all info in row[i]
+        var rowData = tblData.rows[i].innerHTML;
+        //splits row and makes arrays ex instead of <td>a</td>....
+        var rowInfo = rowData.split("<td>");
+        for (var j = 1; j < rowInfo.length; j++) {
+          table[i] = rowInfo;
+        }
+        styleDisplay = 'none';
+      }
+      for (var k = 1; k < table.length; k++) {
+        colInfo[k] = table[k][column];
+      }
+      //  console.log(table);
+      //runs through the string that user enters
+      for (var s = 1; s < table.length; s++) {
+        //  console.log(strData);
+        var str = colInfo[s].toLowerCase();
+        styleDisplay = (str.indexOf(strData) >= 0) ? '' : 'none';
+        tblData.rows[s].style.display = styleDisplay;
+      }
+    }
+  }; //end of return
+}; //end of funtion
