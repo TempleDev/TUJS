@@ -164,6 +164,18 @@ document.getElementsByTagName('head')[0].appendChild(JQscript);
       });
     };
 
+    //checks to see if element is blank
+    TUJS.isBlank = function(elem){
+      elem = (TUJS.E(elem) === null) ? elem.value : TUJS.E(elem).value;
+      for(var i = 0; i<elem.length; i++){
+        var c = elem.charAt(i);
+      if( (c != '\n') && (c !== '')){
+           return false;
+        }
+      }
+      return true;
+    };
+
     //Close Window on a button click
     TUJS.CloseWindow = function () {
       window.close();

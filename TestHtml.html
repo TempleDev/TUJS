@@ -5,11 +5,11 @@
 <script src="TUJS.js"></script>
 </head>
 
-<body>
+<body style="width:60%; margin-left:20%;">
   <h1 class="bad" id="test1" style="text-align:center;">TUJS Examples</h1>
   <h2 style="text-align: center;" id="test2" onclick="TUJS.createClock('test2');">Click to convert to clock</h2>
-  <button type="Button" id="selector" onclick="TUJS.CloseWindow()">Close</button>
-  <h2style="text-align:center;">Calc</h2>
+  <button type="Button" id="selector" onclick="TUJS.CloseWindow()">Close</button> <label>Closes the current browser</label>
+  <h2 style="text-align:center;">Calc</h2>
   <div id="calculate" style="border-bottom: 2px solid black;">
     <input class="test1" id="first" />
     <input class="test1" id="second" onkeyup="TUJS.Calc('first', 'second', '+', 'test1')"/>
@@ -20,13 +20,13 @@
       <option value="/">/</option>
       <option value="%">%</option>
     </select>
-    <button type="Button" class="test1" id="selector" onclick="addit()">Calculate</button>
-    <button type="Button" class="test1" id="selector" onclick="TUJS.AddNumbers('.test1')">Renumber</button>
+    <button type="Button" class="test1" id="selector1" onclick="addit()">Calculate</button>
+    <button type="Button" class="test1" id="selector2" onclick="TUJS.AddNumbers('.test1')">Renumber</button>
     <label id="lblCalc"></label>
     <br><br>
   </div>
 
-  <h2style="text-align:center;">Contains</h2>
+  <h2 style="text-align:center;">Contains</h2>
   <div id="containers" style="border-bottom: 2px solid black;">
     <button type="Button" id="selector4" onclick="TUJS.E('lblContains').innerHTML = TUJS.Contains('lblContainsEx', 'W')">Contains</button>
     <label id="lblContainsEx">if there is an W in this sentence it will return true-----</label>
@@ -34,7 +34,7 @@
     <br><br>
   </div>
 
-  <h2style="text-align:center;">Date Calc</h2>
+  <h2 style="text-align:center;">Date Calc</h2>
   <div id="dater" style="border-bottom: 2px solid black;">
     <input type="Date" name="name" id="date1">
     <input type="Date" name="name" id="date2">
@@ -44,7 +44,7 @@
   <label id="lblDate"></label>
   <br><br>
 </div>
-<h2style="text-align:center;">Table Demo</h2>
+<h2 style="text-align:center;">Table Demo</h2>
 <div id="TableDemo" style="border-bottom: 2px solid black;">
   <table style="width:40%" id="tblDemo">
     <tr>
@@ -71,6 +71,12 @@
   <label id="lblTableDemo"></label>
   <br><br>
 </div>
+<div id="" style="border-bottom: 2px solid black; padding-bottom: 2%;">
+  <h2 style="text-align:center;">isBlank</h2>
+  <input type="text" name="name" id="txtIsBlank"/>
+  <button type="button" onclick="findifblank()" name="button" >Check if Input is blank</button>
+  <label id="lblIsBlank"></label>
+  <br>
 </div>
 </body>
 
@@ -79,6 +85,7 @@ function addit(){
   var op = TUJS.E('selectOperator').value;
   TUJS.E('test4').value = TUJS.Calc('first', 'second', op, 'lblCalc');
 }
+
 function findStatus(){
   var tbl =  TUJS.tableController().ColumnToArray('tblDemo', 3);
   var elem =  TUJS.E('tblDemo');
@@ -96,5 +103,8 @@ function findStatus(){
   }
 }
 
+function findifblank(){
+  TUJS.E('lblIsBlank').innerHTML = TUJS.isBlank('txtIsBlank');
+}
 </script>
 </html>
