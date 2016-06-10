@@ -206,6 +206,34 @@ document.getElementsByTagName('head')[0].appendChild(JQscript);
       $("body").trigger("mousemove");
     };
 
+    // Add event to an obj
+ TU.addEvent = function(obj, type, fn) {
+    if (obj) {
+        if (obj.attachEvent) {
+            obj['e' + type + fn] = fn;
+            obj[type + fn] = function () {
+                obj['e' + type + fn](window.event);
+            };
+            obj.attachEvent('on' + type, obj[type + fn]);
+        } else {
+            obj.addEventListener(type, fn, false);
+        }
+    }
+};
+
+
+// Remove event obj 
+ TU.removeEvent = function(obj, type, fn) {
+    if (obj) {
+        if (obj.detachEvent) {
+            obj.detachEvent('on' + type, obj[type + fn]);
+            obj[type + fn] = null;
+        } else {
+            obj.removeEventListener(type, fn, false);
+        }
+    }
+};
+
     //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>End of library<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     //call things on load
     return TU;
