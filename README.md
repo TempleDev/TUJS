@@ -8,7 +8,7 @@ Contact the Author @ [ElGrandeQueso@temple.edu](http://tumail.temple.edu)</br>
  This Library is a compilation of functions and features that are helpful with Temple IS&T Capstone Client side features.  You are free to use it and modify it as needed.  
 
 
- *SOME FEATURES USE JQUERY* version 2.2.0 (the latest version at the time of build) which is included in the zip file. You can use that which is referenced in the library, or if you are using a newer version you can remove it and use .
+ *SOME FEATURES USE JQUERY* version 2.2.0 (the latest version at the time of build) which is included in the zip file or downloaded [HERE] (http://jquery.com/)
 
 *To use this Library:*
 1) Download the zip file, extract it, and place the TUJS folder inside the root folder of your application (where your main pages are stored). Make sure that both JQuery.js and TU.js are inside the folder.
@@ -32,6 +32,12 @@ Contact the Author @ [ElGrandeQueso@temple.edu](http://tumail.temple.edu)</br>
 [Create Clock](#create-clock)<br/>
 [Date Difference](#date-difference)<br/>
 [Contains](#contains)<br/>
+[Edit ID](#edit-id)<br/>
+[Is Blank](#isblank)<br/>
+[Close](#close)<br/>
+[Session Timeout](#SessionTimeOut)<br/>
+[Add Event](#add-event)<br/>
+[Remove Event](#remove-event)<br/>
 
 ####Calculations:
 ######Notes:
@@ -115,5 +121,83 @@ TU.Contains(container, elementYoureLookingFor);
 2 arguments. the first is the id of the object or object itself of the container. the second is what you are looking for
 ######OUTPUT:
 boolean
+
+[Back to top](#usable-functions)
+
+####Edit ID:
+######Notes:
+This function rewrites all IDs with a given class name by appending the id+1.  very useful with dynamically created content
+```JavaScript
+TU.AddNumbers(classID);
+```
+######INPUT:
+class id
+######OUTPUT:
+nothing.  the IDs will be changed client side
+
+[Back to top](#usable-functions)
+
+####IsBlank:
+######Notes:
+this function will return a boolean value if the element is empty or not including black space
+```JavaScript
+TU.isBlank(elem);
+```
+######INPUT:
+element
+######OUTPUT:
+boolean
+
+[Back to top](#usable-functions)
+
+####Close:
+######Notes:
+Calling this function will close the current browser
+```JavaScript
+TU.CloseWindow();
+```
+######INPUT:
+none
+######OUTPUT:
+current window will close
+
+[Back to top](#usable-functions)
+
+####SessionTimeOut:
+######Notes:
+this function takes in a time and a url and if it reaches idol time. it will redirect to the given page
+```JavaScript
+TU.SessionTimeOut(wait, redirect);
+```
+######INPUT:
+time, and a URL
+######OUTPUT:
+none
+
+[Back to top](#usable-functions)
+
+####Add Event:
+######Notes:
+this function adds an event to the given object
+```JavaScript
+TU.addEvent(obj, type, func);
+```
+######INPUT:
+takes in three parameters.  the first is the object that the event is to be added to. The second is the type of event, and the third is the function that you want called when the event triggers.
+######OUTPUT:
+none, the event is added to the object passed in
+
+[Back to top](#usable-functions)
+
+####Remove Event:
+######Notes:
+this function removes an event to the given object
+```JavaScript
+TU.removeEvent(obj, type, func);
+```
+######INPUT:
+takes in three parameters.  the first is the object that the event is to be removed from. The second is the type of event, and the third is the function that was to be called when the event triggers.
+######OUTPUT:
+none, the event is removed from the object passed in
 
 [Back to top](#usable-functions)

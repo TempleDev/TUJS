@@ -1,9 +1,10 @@
 
-//add jquery to project
-var JQscript = document.createElement('script');
-JQscript.src = "Jquery-2.2.0.js";
-JQscript.type = 'text/javascript';
-document.getElementsByTagName('head')[0].appendChild(JQscript);
+//uncomment if you want jquery to be added automatically to to DOM.
+// NOTE that this prevents you calling .ready functions on the page.
+// var JQscript = document.createElement('script');
+// JQscript.src = "Jquery-2.2.0.js";
+// JQscript.type = 'text/javascript';
+// document.getElementsByTagName('head')[0].appendChild(JQscript);
 
 (function(window) {
 
@@ -222,7 +223,7 @@ document.getElementsByTagName('head')[0].appendChild(JQscript);
 };
 
 
-// Remove event obj 
+// Remove event obj
  TU.removeEvent = function(obj, type, fn) {
     if (obj) {
         if (obj.detachEvent) {
