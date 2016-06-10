@@ -9,36 +9,36 @@ document.getElementsByTagName('head')[0].appendChild(JQscript);
 
   'use strict';
 
-  function define_TUJS() {
+  function define_TU() {
 
-    var TUJS = {};
+    var TU = {};
 
     ///>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>beginning of library<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
     //quick reference for items in the DOM
-    TUJS.E = function(elem) {
+    TU.E = function(elem) {
       return document.getElementById(elem);
     };
-    TUJS.C = function(elem) {
+    TU.C = function(elem) {
       return document.getElementsByClassName(elem);
     };
-    TUJS.T = function(elem) {
+    TU.T = function(elem) {
       return document.getElementsByTagName(elem);
     };
 
     // About
-    TUJS.ver = function() {
+    TU.ver = function() {
       console.log(" Version: 0.3.3\n Authors: \n\n 'Kyler Love'\n Began: '11 March 2016' \n\n'Rob Zahorchak'\n Began: '11 May 2016'");
     };
 
     //greet people cause its nice
-    TUJS.greet = function() {
+    TU.greet = function() {
       console.log("Welcome to Temple University IS&T JavaScript Library");
     };
 
 
     //Tracey's take on current events in the world
-    TUJS.The_Tracey_Harrison_Manifesto = function() {
+    TU.The_Tracey_Harrison_Manifesto = function() {
       var NothingMatters = "<div style='Font-size: 60px;'> NOTHING MATTERS! <div>";
       var bod = document.querySelectorAll('a, div');
 
@@ -53,11 +53,11 @@ document.getElementsByTagName('head')[0].appendChild(JQscript);
 
     //the calc function takes in 3 or 4 arguments and will perform the
     //passed in function
-    TUJS.Calc = function(a, b, Operator, OutputElem) {
+    TU.Calc = function(a, b, Operator, OutputElem) {
       //repurpose OutputElem into the object
-      OutputElem = TUJS.E(OutputElem);
-      var A = parseFloat(TUJS.E(a).value);
-      var B = parseFloat(TUJS.E(b).value);
+      OutputElem = TU.E(OutputElem);
+      var A = parseFloat(TU.E(a).value);
+      var B = parseFloat(TU.E(b).value);
       var C = 0;
       switch (Operator) {
         case "+":
@@ -86,14 +86,14 @@ document.getElementsByTagName('head')[0].appendChild(JQscript);
     };
 
     //turn the innerHTML of any element into a clock
-    TUJS.createClock = function(elem) {
-      elem = (TUJS.E(elem) === null) ? elem : TUJS.E(elem);
+    TU.createClock = function(elem) {
+      elem = (TU.E(elem) === null) ? elem : TU.E(elem);
       setInterval(function(){elem.innerHTML = new Date().toLocaleTimeString();}, 500);
     };
 
     //bool if the obj is found inside the Element(elem) is in passed array
-    TUJS.Contains = function(elem, obj) {
-      elem = (TUJS.E(elem) === null) ? elem : TUJS.E(elem);
+    TU.Contains = function(elem, obj) {
+      elem = (TU.E(elem) === null) ? elem : TU.E(elem);
       var a = elem.innerHTML;
       var i = a.length;
       while (i--) {
@@ -108,7 +108,7 @@ document.getElementsByTagName('head')[0].appendChild(JQscript);
     };
 
     //will return an array of the window size of the screen you are on
-    TUJS.getWindowSize = function() {
+    TU.getWindowSize = function() {
       var myWidth = 0,
       myHeight = 0;
 
@@ -131,10 +131,10 @@ document.getElementsByTagName('head')[0].appendChild(JQscript);
 
     //returns the difference of two dates (in Days) as inputs
     //can pass in dates as an input field or as an input field ID
-    TUJS.DateDifference = function(date1, date2, otpt) {
-      date1 = (TUJS.E(date1) === null) ? date1.value : TUJS.E(date1).value;
-      date2 = (TUJS.E(date2) === null) ? date2.value : TUJS.E(date2).value;
-      otpt = (TUJS.E(otpt) === null) ? otpt : TUJS.E(otpt);
+    TU.DateDifference = function(date1, date2, otpt) {
+      date1 = (TU.E(date1) === null) ? date1.value : TU.E(date1).value;
+      date2 = (TU.E(date2) === null) ? date2.value : TU.E(date2).value;
+      otpt = (TU.E(otpt) === null) ? otpt : TU.E(otpt);
 
       date1 = Date.parse(date1);
       date2 = Date.parse(date2);
@@ -150,12 +150,12 @@ document.getElementsByTagName('head')[0].appendChild(JQscript);
 
     //object call to build a table object form
     //the tableController js page
-    TUJS.tableController = function() {
+    TU.tableController = function() {
       return new Table();
     };
 
     //Rename all elements of a class by adding numbers to the element name
-    TUJS.AddNumbers = function(classId) {
+    TU.AddNumbers = function(classId) {
       $.each($(classId), function(index, id) {
         console.log("inside the each");
         console.log("index: " + index + " id: " + id);
@@ -165,8 +165,8 @@ document.getElementsByTagName('head')[0].appendChild(JQscript);
     };
 
     //checks to see if element is blank
-    TUJS.isBlank = function(elem){
-      elem = (TUJS.E(elem) === null) ? elem.value : TUJS.E(elem).value;
+    TU.isBlank = function(elem){
+      elem = (TU.E(elem) === null) ? elem.value : TU.E(elem).value;
       for(var i = 0; i<elem.length; i++){
         var c = elem.charAt(i);
       if( (c != '\n') && (c !== '')){
@@ -177,13 +177,13 @@ document.getElementsByTagName('head')[0].appendChild(JQscript);
     };
 
     //Close Window on a button click
-    TUJS.CloseWindow = function () {
+    TU.CloseWindow = function () {
       window.close();
     };
 
     //Sesson Time out.  To be used on pages that require users to
     //log out for security reasons
-    TUJS.SessionTimeOut = function (wait, redirect) {
+    TU.SessionTimeOut = function (wait, redirect) {
       var idleTimer = null;
       var idleState = false;
       var idleWait = wait;
@@ -208,12 +208,12 @@ document.getElementsByTagName('head')[0].appendChild(JQscript);
 
     //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>End of library<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     //call things on load
-    return TUJS;
+    return TU;
   }
 
-  if (typeof(TUJS) === 'undefined') {
+  if (typeof(TU) === 'undefined') {
 
-    window.TUJS = define_TUJS();
+    window.TU = define_TU();
   }
 
 })(window);
@@ -225,7 +225,7 @@ var Table = function () {
     //column to array takes a table id and number(column)
     //and returns an array of elements in that column
     ColumnToArray: function(tbl, colNum){
-      tbl = TUJS.E(tbl);
+      tbl = TU.E(tbl);
       var list = [];
       var tabCount = tbl.rows.length;
       //console.log(tbl);
@@ -236,8 +236,8 @@ var Table = function () {
     },
 
     RowToArray: function(tbl, info, colNum){
-      tbl = TUJS.E(tbl);
-      var input = (TUJS.E(info) === null) ? info : TUJS.E(info).value;
+      tbl = TU.E(tbl);
+      var input = (TU.E(info) === null) ? info : TU.E(info).value;
       var list = [];
       var tablHeight = tbl.rows.length;
       var tblLength = tbl.rows[0].cells.length;

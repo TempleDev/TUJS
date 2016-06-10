@@ -2,17 +2,17 @@
 <html>
 <head>
   <title>Page Title</title>
-<script src="TUJS.js"></script>
+<script src="TU.js"></script>
 </head>
 
 <body style="width:60%; margin-left:20%;">
-  <h1 class="bad" id="test1" style="text-align:center;">TUJS Examples</h1>
-  <h2 style="text-align: center;" id="test2" onclick="TUJS.createClock('test2');">Click to convert to clock</h2>
-  <button type="Button" id="selector" onclick="TUJS.CloseWindow()">Close</button> <label>Closes the current browser</label>
+  <h1 class="bad" id="test1" style="text-align:center;">TU.js Examples</h1>
+  <h2 style="text-align: center;" id="test2" onclick="TU.createClock('test2');">Click to convert to clock</h2>
+  <button type="Button" id="selector" onclick="TU.CloseWindow()">Close</button> <label>Closes the current browser</label>
   <h2 style="text-align:center;">Calc</h2>
   <div id="calculate" style="border-bottom: 2px solid black;">
     <input class="test1" id="first" />
-    <input class="test1" id="second" onkeyup="TUJS.Calc('first', 'second', '+', 'test1')"/>
+    <input class="test1" id="second" onkeyup="TU.Calc('first', 'second', '+', 'test1')"/>
     <select name="" id="selectOperator">
       <option value="+">+</option>
       <option value="-">-</option>
@@ -21,14 +21,14 @@
       <option value="%">%</option>
     </select>
     <button type="Button" class="test1" id="selector1" onclick="addit()">Calculate</button>
-    <button type="Button" class="test1" id="selector2" onclick="TUJS.AddNumbers('.test1')">Renumber</button>
+    <button type="Button" class="test1" id="selector2" onclick="TU.AddNumbers('.test1')">Renumber</button>
     <label id="lblCalc"></label>
     <br><br>
   </div>
 
   <h2 style="text-align:center;">Contains</h2>
   <div id="containers" style="border-bottom: 2px solid black;">
-    <button type="Button" id="selector4" onclick="TUJS.E('lblContains').innerHTML = TUJS.Contains('lblContainsEx', 'W')">Contains</button>
+    <button type="Button" id="selector4" onclick="TU.E('lblContains').innerHTML = TU.Contains('lblContainsEx', 'W')">Contains</button>
     <label id="lblContainsEx">if there is an W in this sentence it will return true-----</label>
     <label id="lblContains"></label>
     <br><br>
@@ -39,7 +39,7 @@
     <input type="Date" name="name" id="date1">
     <input type="Date" name="name" id="date2">
     <button type="button" name="button" id="btnDateDiff"
-    onclick="TUJS.DateDifference('date1', 'date2', 'lblDate')">Calculate the difference in Dates
+    onclick="TU.DateDifference('date1', 'date2', 'lblDate')">Calculate the difference in Dates
   </button>
   <label id="lblDate"></label>
   <br><br>
@@ -64,10 +64,10 @@
   </table>
   <button type="button" name="button" onclick="findStatus()">Visualize Status</button>
   <input  name="name" value="" placeholder="Last Name" id="gvSearch" />
-  <button type="button" name="button" onclick="TUJS.tableController().RowToArray('tblDemo', 'gvSearch', 1)">Row To Array input</button>
-  <button type="button" name="button" onclick="TUJS.tableController().RowToArray('tblDemo', 'Dumbledore', 1)">Row To Array Value</button>
-  <input  name="name" value="" placeholder="First Name" onkeyup="TUJS.tableController().SearchGridview(this, 'tblDemo', 0)" />
-  <input  name="name" value="" placeholder="Status" onkeyup="TUJS.tableController().SearchGridview(this, 'tblDemo', 3)" />
+  <button type="button" name="button" onclick="TU.tableController().RowToArray('tblDemo', 'gvSearch', 1)">Row To Array input</button>
+  <button type="button" name="button" onclick="TU.tableController().RowToArray('tblDemo', 'Dumbledore', 1)">Row To Array Value</button>
+  <input  name="name" value="" placeholder="First Name" onkeyup="TU.tableController().SearchGridview(this, 'tblDemo', 0)" />
+  <input  name="name" value="" placeholder="Status" onkeyup="TU.tableController().SearchGridview(this, 'tblDemo', 3)" />
   <label id="lblTableDemo"></label>
   <br><br>
 </div>
@@ -82,13 +82,13 @@
 
 <script type="text/javascript">
 function addit(){
-  var op = TUJS.E('selectOperator').value;
-  TUJS.E('test4').value = TUJS.Calc('first', 'second', op, 'lblCalc');
+  var op = TU.E('selectOperator').value;
+  TU.E('test4').value = TU.Calc('first', 'second', op, 'lblCalc');
 }
 
 function findStatus(){
-  var tbl =  TUJS.tableController().ColumnToArray('tblDemo', 3);
-  var elem =  TUJS.E('tblDemo');
+  var tbl =  TU.tableController().ColumnToArray('tblDemo', 3);
+  var elem =  TU.E('tblDemo');
   for(itme in tbl){
     console.log(tbl[itme]);
     if(tbl[itme].toLowerCase() === 'complete'){
@@ -104,7 +104,7 @@ function findStatus(){
 }
 
 function findifblank(){
-  TUJS.E('lblIsBlank').innerHTML = TUJS.isBlank('txtIsBlank');
+  TU.E('lblIsBlank').innerHTML = TU.isBlank('txtIsBlank');
 }
 </script>
 </html>
