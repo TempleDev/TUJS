@@ -1,5 +1,6 @@
 
 #TU.js
+##Version 1.1.2
 
 Temple University IS&amp;T Capstone JavaScript Library </br>
 Contact the Author @ [ElGrandeQueso@temple.edu](http://tumail.temple.edu)</br>
