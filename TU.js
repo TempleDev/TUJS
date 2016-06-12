@@ -29,7 +29,7 @@
 
     // About
     TU.ver = function() {
-      console.log(" Version: 0.3.3\n Authors: \n\n 'Kyler Love'\n Began: '11 March 2016' \n\n'Rob Zahorchak'\n Began: '11 May 2016'");
+      console.log(" Version: 1.1.2\n Authors: \n\n 'Kyler Love'\n Began: '11 March 2016' \n\n'Rob Zahorchak'\n Began: '11 May 2016'");
     };
 
     //greet people cause its nice
