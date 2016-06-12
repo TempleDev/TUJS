@@ -141,7 +141,7 @@ nothing.  the IDs will be changed client side
 
 ####IsBlank:
 ######Notes:
-this function will return a boolean value if the element is empty or not including black space
+this function will return a boolean value if the element is empty or not including blank space
 ```JavaScript
 TU.isBlank(elem);
 ```
