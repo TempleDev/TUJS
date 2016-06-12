@@ -3,6 +3,7 @@
 
 Temple University IS&amp;T Capstone JavaScript Library </br>
 Contact the Author @ [ElGrandeQueso@temple.edu](http://tumail.temple.edu)</br>
+Check the issues tab to make sure its not already being looked into</br>
 
  **OVERVIEW:**
  This Library is a compilation of functions and features that are helpful with Temple IS&T Capstone Client side features.  You are free to use it and modify it as needed.  
