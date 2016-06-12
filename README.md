@@ -37,7 +37,7 @@ Check the issues tab to make sure its not already being looked into</br>
 [Edit ID](#edit-id)<br/>
 [Is Blank](#isblank)<br/>
 [Close](#close)<br/>
-[Session Timeout](#SessionTimeOut)<br/>
+[Session Timeout](#sessiontimeout)<br/>
 [Add Event](#add-event)<br/>
 [Remove Event](#remove-event)<br/>
 
