@@ -13,11 +13,11 @@ Check the issues tab to make sure its not already being looked into</br>
  *SOME FEATURES USE JQUERY* version 2.2.0 (the latest version at the time of build) which is included in the zip file or downloaded [HERE] (http://jquery.com/)
 
 *To use this Library:*
-1) Download the zip file, extract it, and place the TU.js folder inside the root folder of your application (where your main pages are stored). Make sure that both JQuery.js and TU.js are inside the folder.
+1) Download the zip file, extract it, and place the TU.js folder inside the JavaScript folder of your application (where your main pages are stored). Make sure that both JQuery.js and TU.js are inside the folder.
 
-2) place the following code on any page that you want to use the Library. NOTE that you may need to reassign the folders based on if you put the library inside another folder:
+2) place the following code on any page that you want to use the Library. NOTE that you may need to rename the following based on if you put the library inside another directory:
 ```HTML
-<script src="TUJS/TU.js"></script>
+<script src="js/TU.js"></script>
 ```
 
 3) To call any of the following funcitons from the library you to call the Library itself followed by the functions with any parameters that it may take.  For example, the following code will display the version function in the console when the button is clicked:
