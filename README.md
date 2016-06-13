@@ -60,7 +60,7 @@ The table editor is a useful set of functions that help manipulate any tables or
 to use any of the functions, you must first call the library (TU) followed by the instantiation of the table class (tableController()) then call the method.  For Example to call the method that returns the
 column of a table into a list:  
 
-######INPUT: There are currently 3 methods for the table class:
+######INPUT: There are currently 4 methods for the table class:
 1) ColumnToArray(string TableName, int columnNumber);
 ```JavaScript
 var x = TU.tableController().ColumnToArray('tableName', columnNumber);
@@ -74,7 +74,7 @@ This function selects/deselects all checkboxes based on the header checkbox valu
 ```HTML
 <asp:TemplateField>
 <HeaderTemplate>
-  <asp:CheckBox ID="chkboxSelectAll" onclick="SelectAllCheckBoxes(this, 'gridViewOrTableID');"/>
+  <asp:CheckBox ID="chkboxSelectAll" onclick="TU.tableController().SelectAllCheckBoxes(this, 'gridViewOrTableID');"/>
 </HeaderTemplate>
 <ItemTemplate>
   <asp:CheckBox ID="chkbx" runat="server"></asp:CheckBox>
