@@ -48,19 +48,20 @@
 <div id="TableDemo" style="border-bottom: 2px solid black;">
   <table style="width:40%" id="tblDemo">
     <tr>
+      <th><input type="checkbox" id="headCheckBox"  onclick="TU.tableController().SelectAllCheckBoxes(this, 'tblDemo');"></th>
       <th>First Name</th>
       <th>Last Name</th>
       <th>Age</th>
       <th>Status</th>
     </tr>
-    <tr>  <td>John</td><td>Hammond</td>  <td>50</td>  <td>In Progress</td>  </tr>
-    <tr>  <td>Mitch</td>  <td>Man</td>  <td>25</td>  <td>Complete</td>  </tr>
-    <tr>  <td>Kris</td>  <td>Kringle</td>  <td>232</td>  <td>Not Started</td>  </tr>
-    <tr>  <td>Peter</td>  <td>Pan</td>  <td>13?</td><td>Complete</td>  </tr>
-    <tr>  <td>Albus</td>  <td>Dumbledore</td>  <td>132</td>  <td>Not Started</td>  </tr>
-    <tr>  <td>Jim</td>  <td>Halpert</td>  <td>32</td>  <td>In progress</td>  </tr>
-    <tr>  <td>Kurt</td>  <td>Russell</td>  <td>42</td>  <td>complete</td>  </tr>
-    <tr>  <td>Tim</td>  <td>Burton</td>  <td>51</td>  <td>Not Started</td>  </tr>
+    <tr> <td> <input type="checkbox" id="chkbx"></td> <td>John</td><td>Hammond</td>  <td>50</td>  <td>In Progress</td>  </tr>
+    <tr> <td><input type="checkbox" id="chkbx1"></td>   <td>Mitch</td>  <td>Man</td>  <td>25</td>  <td>Complete</td>  </tr>
+    <tr> <td><input type="checkbox" id="chkbx2"></td>   <td>Kris</td>  <td>Kringle</td>  <td>232</td>  <td>Not Started</td>  </tr>
+    <tr> <td><input type="checkbox" id="chkbx3"></td>   <td>Peter</td>  <td>Pan</td>  <td>13?</td><td>Complete</td>  </tr>
+    <tr> <td><input type="checkbox" id="chkbx4"></td>   <td>Albus</td>  <td>Dumbledore</td>  <td>132</td>  <td>Not Started</td>  </tr>
+    <tr> <td><input type="checkbox" id="chkbx5"></td>   <td>Jim</td>  <td>Halpert</td>  <td>32</td>  <td>In progress</td>  </tr>
+    <tr> <td><input type="checkbox" id="chkbx6"></td>   <td>Kurt</td>  <td>Russell</td>  <td>42</td>  <td>complete</td>  </tr>
+    <tr> <td><input type="checkbox" id="chkbx7"></td>   <td>Tim</td>  <td>Burton</td>  <td>51</td>  <td>Not Started</td>  </tr>
   </table>
   <button type="button" name="button" onclick="findStatus()">Visualize Status</button>
   <input  name="name" value="" placeholder="Last Name" id="gvSearch" />

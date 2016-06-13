@@ -6,11 +6,11 @@ Temple University IS&amp;T Capstone JavaScript Library </br>
 Contact the Author @ [ElGrandeQueso@temple.edu](http://tumail.temple.edu)</br>
 Check the issues tab to make sure its not already being looked into</br>
 
- **OVERVIEW:**
- This Library is a compilation of functions and features that are helpful with Temple IS&T Capstone Client side features.  You are free to use it and modify it as needed.  
+**OVERVIEW:**
+This Library is a compilation of functions and features that are helpful with Temple IS&T Capstone Client side features.  You are free to use it and modify it as needed.  
 
 
- *SOME FEATURES USE JQUERY* version 2.2.0 (the latest version at the time of build) which is included in the zip file or downloaded [HERE] (http://jquery.com/)
+*SOME FEATURES USE JQUERY* version 2.2.0 (the latest version at the time of build) which is included in the zip file or downloaded [HERE] (http://jquery.com/)
 
 *To use this Library:*
 1) Download the zip file, extract it, and place the TU.js folder inside the JavaScript folder of your application (where your main pages are stored). Make sure that both JQuery.js and TU.js are inside the folder.
@@ -61,24 +61,36 @@ to use any of the functions, you must first call the library (TU) followed by th
 column of a table into a list:  
 
 ######INPUT: There are currently 3 methods for the table class:
- 1) ColumnToArray(string TableName, int columnNumber);
- ```JavaScript
- var x = TU.tableController().ColumnToArray('tableName', columnNumber);
- ```
- 2) RowToArray(string TableName, string element/literal, int column Number);
- ```JavaScript
- var x = TU.tableController().RowToArray('tableName','info', columnNumber);
- ```
- 3) SearchGridview(input Textbox, Table Name, Column of where you are searching);
- ```JavaScript
- var x = TU.tableController().SearchGridview(this (input object), table name, columnNumber);
- ```
+1) ColumnToArray(string TableName, int columnNumber);
+```JavaScript
+var x = TU.tableController().ColumnToArray('tableName', columnNumber);
+```
+2) RowToArray(string TableName, string element/literal, int column Number);
+```JavaScript
+var x = TU.tableController().RowToArray('tableName','info', columnNumber);
+```
+2) SelectAllCheckBoxes(Checkbox, string Table);
+This function selects/deselects all checkboxes based on the header checkbox value. The following is how your Gridview should be created allowing your head Checkbox to call the function on click
+```HTML
+<asp:TemplateField>
+<HeaderTemplate>
+  <asp:CheckBox ID="chkboxSelectAll" onclick="SelectAllCheckBoxes(this, 'gridViewOrTableID');"/>
+</HeaderTemplate>
+<ItemTemplate>
+  <asp:CheckBox ID="chkbx" runat="server"></asp:CheckBox>
+</ItemTemplate>
+</asp:TemplateField>
+```
+4) SearchGridview(input Textbox, Table Name, Column of where you are searching);
+```JavaScript
+var x = TU.tableController().SearchGridview(this (input object), table name, columnNumber);
+```
 ######OUTPUT:
- 1) Array containing strings of the contents in that column
+1) Array containing strings of the contents in that column
 
- 2) Array containing strings of the contents in the row.  the second input can either be a string of an element(ie Textbox), or it can be a literal string for text you are searching for (ie "John")
+2) Array containing strings of the contents in the row.  the second input can either be a string of an element(ie Textbox), or it can be a literal string for text you are searching for (ie "John")
 
- 3) NONE** this function manipulates the table itself and filters itself
+3) NONE** this function manipulates the table itself and filters itself
 
 ####Get Size of Page:
 ######Notes:

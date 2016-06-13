@@ -281,6 +281,14 @@ var Table = function () {
       return list;
     },
 
+    //Selects all checkboxes in a table.  See Readme for Table Creating
+    SelectAllCheckBoxes: function(Checkbox, tbl){
+            var table1 = TU.E(tbl);
+            for (i = 1; i < table1.rows.length; i++) {
+                table1.rows[i].cells[0].getElementsByTagName("INPUT")[0].checked = Checkbox.checked;
+            }
+    },
+
     // Authors: Armond Smith, Kyler Love, and Rob Zahorchak gridview auto filter
     SearchGridview: function(strKey, strGV, column) {
       column++;
