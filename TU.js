@@ -1,5 +1,5 @@
 
-//uncomment if you want jquery to be added automatically to to DOM.
+//uncomment if you want jquery to be added automatically to the DOM.
 // NOTE that this prevents you calling .ready functions on the page.
 // var JQscript = document.createElement('script');
 // JQscript.src = "Jquery-2.2.0.js";
