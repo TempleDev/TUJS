@@ -68,7 +68,7 @@ var x = TU.tableController().ColumnToArray('tableName', columnNumber);
 ```JavaScript
 var x = TU.tableController().RowToArray('tableName','info', columnNumber);
 ```
-2) SelectAllCheckBoxes(Checkbox, string Table);
+3) SelectAllCheckBoxes(Checkbox, string Table);
 This function selects/deselects all checkboxes based on the header checkbox value. The following is how your Gridview should be created allowing your head Checkbox to call the function on click
 ```HTML
 <asp:TemplateField>
