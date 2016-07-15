@@ -89,7 +89,7 @@ var x = TU.tableController().SearchGridview(this (input object), table name, col
 
 2) Array containing strings of the contents in the row.  the second input can either be a string of an element(ie Textbox), or it can be a literal string for text you are searching for (ie "John")
 
-3) NONE** this function manipulates the table itself and filters itself
+3) NOTE** this function manipulates the table itself and filters itself on client side.  There is no postback.
 
 ####Get Size of Page:
 ######Notes:
