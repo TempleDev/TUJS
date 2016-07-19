@@ -67,8 +67,8 @@
   <input  name="name" value="" placeholder="Last Name" id="gvSearch" />
   <button type="button" name="button" onclick="TU.tableController().RowToArray('tblDemo', 'gvSearch', 1)">Row To Array input</button>
   <button type="button" name="button" onclick="TU.tableController().RowToArray('tblDemo', 'Dumbledore', 1)">Row To Array Value</button>
-  <input  name="name" value="" placeholder="First Name" onkeyup="TU.tableController().SearchGridview(this, 'tblDemo', 0)" />
-  <input  name="name" value="" placeholder="Status" onkeyup="TU.tableController().SearchGridview(this, 'tblDemo', 3)" />
+  <input  name="name" value="" placeholder="First Name" onkeyup="TU.tableController().SearchGridview(this, 'tblDemo', 1)" />
+  <input  name="name" value="" placeholder="Status" onkeyup="TU.tableController().SearchGridview(this, 'tblDemo', 4)" />
   <label id="lblTableDemo"></label>
   <br><br>
 </div>
@@ -88,7 +88,7 @@ function addit(){
 }
 
 function findStatus(){
-  var tbl =  TU.tableController().ColumnToArray('tblDemo', 3);
+  var tbl =  TU.tableController().ColumnToArray('tblDemo', 4);
   var elem =  TU.E('tblDemo');
   for(itme in tbl){
     console.log(tbl[itme]);

@@ -1,4 +1,11 @@
 
+
+/*
+TU.js is a JavaScript library created by IS&T Capstone Students for use in Capstone projects.
+Anyone is free to use/modify Code as needed for whatever.  If you have a bug or would like to contribute to
+the library you can reach us or fork it at: https://github.com/TempleDev/TUJS.git
+*/
+
 //uncomment if you want jquery to be added automatically to the DOM.
 // NOTE that this prevents you calling $(document).ready functions on the page.
 // var JQscript = document.createElement('script');
@@ -29,7 +36,14 @@
 
     // About
     TU.ver = function() {
-      console.log(" Version: 1.1.2\n Authors: \n\n 'Kyler Love'\n Began: '11 March 2016' \n\n'Rob Zahorchak'\n Began: '11 May 2016'");
+      console.log("Version: 1.1.3 \nLast Updated: 7/19/2016 - Kyler Love\n"+
+      "\nAuthors: \nKyler Love\nBegan: '11 April 2016' "+
+      "\n\nRob Zahorchak\nBegan: '11 May 2016'");
+    };
+
+    //TU.toString();
+    TU.toString = function() {
+      return "TU.js JavaScript Library Object";
     };
 
     //greet people cause its nice
@@ -152,7 +166,7 @@
     //object call to build a table object form
     //the tableController js page
     TU.tableController = function() {
-      return new Table();
+      return new tblControl();
     };
 
     //Rename all elements of a class by adding numbers to the element name
@@ -241,14 +255,15 @@
   }
 
   if (typeof(TU) === 'undefined') {
-
     window.TU = define_TU();
+  }else{
+    console.log("TU is already defined");
   }
 
 })(window);
 
-//tableController function
-var Table = function () {
+//TU.tableController() function
+var tblControl = function () {
 
   return {
     //column to array takes a table id and number(column)
@@ -289,7 +304,7 @@ var Table = function () {
             }
     },
 
-    // Authors: Armond Smith, Kyler Love, and Rob Zahorchak gridview auto filter
+    // Authors: Armond Smith, Kyler Love, and Rob Zahorchak gridview auto filter April 2016
     SearchGridview: function(strKey, strGV, column) {
       column++;
       //string of what is typed in
