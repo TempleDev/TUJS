@@ -79,14 +79,35 @@
   <label id="lblIsBlank"></label>
   <br>
 </div>
+
+<div id="" style="border-bottom: 2px solid black; padding-bottom: 2%;">
+  <h2 style="text-align:center;">Add/Remove Events</h2>
+  <button type="button" name="button" id="eventButton">Click for Event</button>
+  <button type="button" name="button" onclick="addAnEvent()">Add Event</button>
+  <button type="button" name="button" onclick="RemoveAnEvent()">Remove Event</button>
+  <br>
+</div>
 </body>
 
 <script type="text/javascript">
+// the below three functions are for add/remove events.
+function addAnEvent(){
+   TU.addEvent(TU.E('eventButton'), 'click', giveAlert);
+}
+function RemoveAnEvent(){
+   TU.removeEvent(TU.E('eventButton'), 'click', giveAlert);
+}
+function giveAlert(){
+  alert('The Event is wired');
+}
+
+//function that is called from the calc buttons are called
 function addit(){
   var op = TU.E('selectOperator').value;
   TU.E('test4').value = TU.Calc('first', 'second', op, 'lblCalc');
 }
 
+//changes the background colors of the rows based on the status column
 function findStatus(){
   var tbl =  TU.tableController().ColumnToArray('tblDemo', 4);
   var elem =  TU.E('tblDemo');
@@ -104,6 +125,7 @@ function findStatus(){
   }
 }
 
+//checks if the textbox is blank
 function findifblank(){
   TU.E('lblIsBlank').innerHTML = TU.isBlank('txtIsBlank');
 }

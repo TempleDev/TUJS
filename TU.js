@@ -56,7 +56,6 @@ the library you can reach us or fork it at: https://github.com/TempleDev/TUJS.gi
     TU.The_Tracey_Harrison_Manifesto = function() {
       var NothingMatters = "<div style='Font-size: 60px;'> NOTHING MATTERS! <div>";
       var bod = document.querySelectorAll('a, div');
-
       setInterval(function() {
         for (var variable in bod) {
           console.log(bod);
@@ -142,7 +141,6 @@ the library you can reach us or fork it at: https://github.com/TempleDev/TUJS.gi
       }
       return [myWidth, myHeight];
     };
-
 
     //returns the difference of two dates (in Days) as inputs
     //can pass in dates as an input field or as an input field ID
@@ -236,7 +234,6 @@ the library you can reach us or fork it at: https://github.com/TempleDev/TUJS.gi
     }
 };
 
-
 // Remove event obj
  TU.removeEvent = function(obj, type, fn) {
     if (obj) {
@@ -272,7 +269,6 @@ var tblControl = function () {
       tbl = TU.E(tbl);
       var list = [];
       var tabCount = tbl.rows.length;
-      //console.log(tbl);
       for(var x = 1; x < tabCount; x++){
         list[x - 1] = tbl.rows[x].cells[colNum].innerHTML;
       }
@@ -292,7 +288,6 @@ var tblControl = function () {
           }
         }
       }
-      // console.log(list);
       return list;
     },
 
@@ -309,7 +304,6 @@ var tblControl = function () {
       column++;
       //string of what is typed in
       var strData = strKey.value.toLowerCase().split(" ");
-      // console.log(strData);
       //raw data from table
       var tblData = document.getElementById(strGV);
       var table = [];
@@ -329,10 +323,8 @@ var tblControl = function () {
       for (var k = 1; k < table.length; k++) {
         colInfo[k] = table[k][column];
       }
-      //  console.log(table);
       //runs through the string that user enters
       for (var s = 1; s < table.length; s++) {
-        //  console.log(strData);
         var str = colInfo[s].toLowerCase();
         styleDisplay = (str.indexOf(strData) >= 0) ? '' : 'none';
         tblData.rows[s].style.display = styleDisplay;
