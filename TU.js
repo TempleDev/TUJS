@@ -189,7 +189,7 @@ the library you can reach us or fork it at: https://github.com/TempleDev/TUJS.gi
       return true;
     };
 
-    //Close Window on a button click
+    //Close Window on a button click (doesn't work in Firefox)
     TU.CloseWindow = function () {
       window.close();
     };
