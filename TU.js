@@ -189,7 +189,9 @@ the library you can reach us or fork it at: https://github.com/TempleDev/TUJS.gi
       return true;
     };
 
-    //Close Window on a button click (doesn't work in Firefox)
+    //[1] Starting in Firefox 46.0.1, Window.close() 
+    //can no longer close windows that weren't opened
+    //by the same script. This is a security precaution.
     TU.CloseWindow = function () {
       window.close();
     };
