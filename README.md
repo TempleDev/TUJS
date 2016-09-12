@@ -23,7 +23,7 @@ This Library is a compilation of functions and features that are helpful with Te
 3) To call any of the following funcitons from the library you to call the Library itself followed by the functions with any parameters that it may take.  For example, the following code will display the version function in the console when the button is clicked:
 
 ```HTML
-<button onclick"TU.ver()">Click for Version</button>
+<button onclick="TU.ver()">Click for Version</button>
 ```
 
 ## Usable Functions
